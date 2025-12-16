@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import Insights from "./pages/Insights";
 import KYC from "./pages/KYC";
 import Testimonials from "./pages/Testimonials";
+import Login from "./components/Login";
 
 import Layout from "./components/Layout";
 import Header from "./components/Header";
@@ -117,6 +118,7 @@ export default function App() {
           </DefaultLayout>
         }
       />
+      <Route path="/login" element={<Login />} />
 
       {/* Admin Routes using AdminLayout */}
       <Route path="/admin" element={<AdminLayout />}>

@@ -1,30 +1,39 @@
-import { useState } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import './Layout.css';
+import { useState } from "react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
+import "./Layout.css";
 
 export default function Header({ activePage }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [investmentsOpen, setInvestmentsOpen] = useState(false);
+  const [pagesOpen, setPagesOpen] = useState(false);
 
   const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { 
-      name: 'Investments', 
-      href: '/investments',
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    {
+      name: "Investments",
+      href: "/investments",
       hasDropdown: true,
       subItems: [
-        { name: 'All Divisions', href: '/investments' },
-        { name: 'Luxury Automotive & Logistics', href: '/investments' },
-        { name: 'Sustainable & Emerging Markets', href: '/investments' },
-        { name: 'Alternative Investments', href: '/investments' }
-      ]
+        { name: "All Divisions", href: "/investments" },
+        { name: "Luxury Automotive & Logistics", href: "/investments" },
+        { name: "Sustainable & Emerging Markets", href: "/investments" },
+        { name: "Alternative Investments", href: "/investments" },
+      ],
     },
-    { name: 'Investor Hub', href: '/investor-hub' },
-    { name: 'Insights', href: '/insights' },
-    { name: 'FAQ', href: '/faq' },
-    { name: 'Contact', href: '/contact' }
+    { name: "Investor Hub", href: "/investor-hub" },
+    { name: "Insights", href: "/insights" },
+    {
+      name: "Pages",
+      href: "#",
+      hasDropdown: true,
+      subItems: [
+        { name: "Testimonials", href: "/testimonials" },
+        { name: "FAQ", href: "/faq" },
+      ],
+    },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -53,7 +62,7 @@ export default function Header({ activePage }) {
                     <Link
                       to={item.href}
                       className={`nav-link ${
-                        activePage === item.href ? 'active' : ''
+                        activePage === item.href ? "active" : ""
                       }`}
                     >
                       {item.name}
@@ -77,7 +86,7 @@ export default function Header({ activePage }) {
                   <Link
                     to={item.href}
                     className={`nav-link ${
-                      activePage === item.href ? 'active' : ''
+                      activePage === item.href ? "active" : ""
                     }`}
                   >
                     {item.name}
@@ -85,10 +94,10 @@ export default function Header({ activePage }) {
                 )}
               </div>
             ))}
-            <Link
-              to="/express-interest" 
-              className="express-interest-button"
-            >
+            <Link to="/login" className="nav-link">
+              Login
+            </Link>
+            <Link to="/express-interest" className="express-interest-button">
               Express Interest
             </Link>
           </div>
@@ -98,7 +107,11 @@ export default function Header({ activePage }) {
             className="mobile-menu-button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
 
@@ -111,13 +124,25 @@ export default function Header({ activePage }) {
                   {item.hasDropdown ? (
                     <>
                       <button
-                        onClick={() => setInvestmentsOpen(!investmentsOpen)}
+                        onClick={() => {
+                          if (item.name === "Investments")
+                            setInvestmentsOpen(!investmentsOpen);
+                          if (item.name === "Pages") setPagesOpen(!pagesOpen);
+                        }}
                         className="mobile-nav-button"
                       >
                         {item.name}
-                        <ChevronDown className={`mobile-dropdown-arrow ${investmentsOpen ? 'open' : ''}`} />
+                        <ChevronDown
+                          className={`mobile-dropdown-arrow ${
+                            (item.name === "Investments" && investmentsOpen) ||
+                            (item.name === "Pages" && pagesOpen)
+                              ? "open"
+                              : ""
+                          }`}
+                        />
                       </button>
-                      {investmentsOpen && (
+                      {((item.name === "Investments" && investmentsOpen) ||
+                        (item.name === "Pages" && pagesOpen)) && (
                         <div className="mobile-dropdown-menu">
                           {item.subItems.map((subItem) => (
                             <Link
@@ -135,7 +160,7 @@ export default function Header({ activePage }) {
                     <Link
                       to={item.href}
                       className={`mobile-nav-link ${
-                        activePage === item.href ? 'active' : ''
+                        activePage === item.href ? "active" : ""
                       }`}
                     >
                       {item.name}
@@ -143,6 +168,9 @@ export default function Header({ activePage }) {
                   )}
                 </div>
               ))}
+              <Link to="/login" className="mobile-nav-link">
+                Login
+              </Link>
               <Link
                 to="/express-interest"
                 className="mobile-express-interest-button"
