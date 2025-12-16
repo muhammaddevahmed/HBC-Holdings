@@ -1,0 +1,53 @@
+.input-container {
+  /* No specific container styles from the original code */
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #374151;
+}
+
+.input-required {
+  color: #ef4444;
+  margin-left: 0.25rem;
+}
+
+.input-field,
+.textarea-field,
+.select-field {
+  width: 100%;
+  padding: 0.625rem 1rem;
+  border-width: 1px;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  border-color: #d1d5db;
+}
+
+.input-field:focus,
+.textarea-field:focus,
+.select-field:focus {
+  outline: 2px solid #5DD923;
+  outline-offset: 2px;
+  border-color: #5DD923;
+}
+
+.input-field.error,
+.textarea-field.error,
+.select-field.error {
+  border-color: #ef4444;
+}
+
+.textarea-field {
+  resize: none;
+}
+
+.select-field {
+  background-color: #ffffff;
+}
+
+.input-error-message {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: #ef4444;
+}

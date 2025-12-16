@@ -1,0 +1,641 @@
+.hero-section {
+  position: relative;
+  background-image: linear-gradient(to bottom right, #111827, #1f2937);
+  color: #ffffff;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.hero-content {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .hero-content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.hero-text-container {
+  max-width: 48rem;
+}
+
+.hero-title {
+  margin-bottom: 1.5rem;
+}
+
+.hero-title-highlight {
+  color: #5DD923;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: #d1d5db;
+}
+
+.who-we-are-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: #ffffff;
+}
+
+.who-we-are-content {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .who-we-are-content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .who-we-are-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.who-we-are-grid {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .who-we-are-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.who-we-are-title {
+  margin-bottom: 1.5rem;
+}
+
+.who-we-are-title-highlight {
+  color: #5DD923;
+}
+
+.who-we-are-text {
+  margin-bottom: 1rem;
+  color: #4b5563;
+}
+
+.who-we-are-text-final {
+    margin-bottom: 1.5rem;
+    color: #4b5563;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.stat-item {
+  background-color: #f9fafb;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.stat-value {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #5DD923;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+.who-we-are-image {
+    border-radius: 0.75rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    width: 100%;
+}
+
+.vision-mission-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: #f9fafb;
+}
+
+.vision-mission-content {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .vision-mission-content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .vision-mission-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.vision-mission-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .vision-mission-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.vision-mission-card {
+  border-left: 4px solid #5DD923;
+}
+
+.vision-mission-card-mission {
+    border-left: 4px solid #599416;
+}
+
+.card-body-flex {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.card-icon-container {
+    width: 3rem;
+    height: 3rem;
+    background-color: #5DD923;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.card-icon-container-mission {
+    width: 3rem;
+    height: 3rem;
+    background-color: #599416;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.card-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #ffffff;
+}
+
+.card-title {
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    color: #4b5563;
+}
+
+.core-values-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: #ffffff;
+}
+
+.core-values-content {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .core-values-content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .core-values-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.core-values-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.core-values-title {
+  margin-bottom: 1rem;
+}
+
+.core-values-title-highlight {
+  color: #5DD923;
+}
+
+.core-values-subtitle {
+  font-size: 1.25rem;
+  color: #4b5563;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.core-values-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .core-values-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .core-values-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.value-card-body {
+  text-align: center;
+}
+
+.value-card-icon-container {
+  width: 3rem;
+  height: 3rem;
+  background-color: #5DD923;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.value-card-title {
+  margin-bottom: 0.75rem;
+}
+
+.value-card-description {
+  color: #4b5563;
+  font-size: 0.875rem;
+}
+
+.investment-philosophy-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-image: linear-gradient(to bottom right, #111827, #1f2937);
+  color: #ffffff;
+}
+
+.investment-philosophy-content {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .investment-philosophy-content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .investment-philosophy-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.investment-philosophy-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.investment-philosophy-title {
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.investment-philosophy-title-highlight {
+  color: #5DD923;
+}
+
+.investment-philosophy-subtitle {
+  font-size: 1.25rem;
+  color: #d1d5db;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.investment-philosophy-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .investment-philosophy-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.principle-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.principle-card-icon {
+  margin-bottom: 1rem;
+}
+
+.principle-card-title {
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.principle-card-description {
+  color: #d1d5db;
+}
+
+.capital-protection-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: #ffffff;
+}
+
+.capital-protection-content {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .capital-protection-content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .capital-protection-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.capital-protection-grid {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .capital-protection-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.capital-protection-image {
+    border-radius: 0.75rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    width: 100%;
+}
+
+.capital-protection-title {
+  margin-bottom: 1.5rem;
+}
+
+.capital-protection-title-highlight {
+  color: #5DD923;
+}
+
+.capital-protection-description {
+  margin-bottom: 1.5rem;
+  color: #4b5563;
+}
+
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.step {
+  display: flex;
+  gap: 1rem;
+}
+
+.step-number-container {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: rgba(93, 217, 35, 0.1);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.step-number {
+  color: #5DD923;
+  font-weight: 700;
+}
+
+.step-title {
+  margin-bottom: 0.5rem;
+}
+
+.step-description {
+  color: #4b5563;
+  font-size: 0.875rem;
+}
+
+.timeline-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: #f9fafb;
+}
+
+.timeline-content {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .timeline-content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .timeline-content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.timeline-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.timeline-title {
+  margin-bottom: 1rem;
+}
+
+.timeline-title-highlight {
+  color: #5DD923;
+}
+
+.timeline-subtitle {
+  font-size: 1.25rem;
+  color: #4b5563;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.timeline-container {
+  position: relative;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 2px;
+  background-color: #5DD923;
+}
+
+@media (min-width: 768px) {
+  .timeline-line {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.timeline-items {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+}
+
+.timeline-item-content {
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .timeline-item:nth-child(odd) .timeline-item-content {
+    padding-right: 3rem;
+    text-align: right;
+  }
+
+  .timeline-item:nth-child(even) .timeline-item-content {
+    padding-left: 3rem;
+    text-align: left;
+  }
+}
+
+.timeline-item-year {
+  color: #5DD923;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-item-title {
+  margin-bottom: 0.5rem;
+}
+
+.timeline-item-description {
+  color: #4b5563;
+  font-size: 0.875rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -0.4rem;
+  width: 1rem;
+  height: 1rem;
+  background-color: #5DD923;
+  border-radius: 9999px;
+  border: 4px solid #ffffff;
+  box-shadow: 0 0 0 3px #5DD923;
+}
+
+@media (min-width: 768px) {
+  .timeline-dot {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.timeline-item-spacer {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .timeline-item-spacer {
+    display: block;
+    flex: 1;
+  }
+}
