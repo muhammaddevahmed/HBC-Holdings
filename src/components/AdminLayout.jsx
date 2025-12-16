@@ -1,28 +1,47 @@
-import { useState } from 'react';
-import { NavLink, Outlet, useNavigate } from 'react-router-dom';
-import { 
-  LayoutDashboard, Users, MessageSquare, FileText, TrendingUp, Settings, 
-  LogOut, BarChart3
-} from 'lucide-react';
-import '../pages/Admin.css'; // Assuming Admin.css contains styles for the sidebar and admin layout
+import { useState } from "react";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import {
+  Users,
+  MessageSquare,
+  FileText,
+  LogOut,
+  BarChart3,
+} from "lucide-react";
+import "../pages/Admin.css"; // Assuming Admin.css contains styles for the sidebar and admin layout
 
 export default function AdminLayout() {
   const navigate = useNavigate();
   const navigation = [
-    { id: 'dashboard', icon: <LayoutDashboard className="w-5 h-5" />, label: 'Dashboard', path: '/admin' },
-    { id: 'leads', icon: <Users className="w-5 h-5" />, label: 'Leads Management', path: '/admin/leads' },
-    { id: 'divisions', icon: <TrendingUp className="w-5 h-5" />, label: 'Investment Divisions', path: '/admin/divisions' },
-    { id: 'insights', icon: <FileText className="w-5 h-5" />, label: 'Client Insights', path: '/admin/insights' },
-    { id: 'faq', icon: <MessageSquare className="w-5 h-5" />, label: 'FAQ Management', path: '/admin/faq' },
-    { id: 'testimonials', icon: <BarChart3 className="w-5 h-5" />, label: 'Testimonials', path: '/admin/testimonials' },
-    { id: 'analytics', icon: <BarChart3 className="w-5 h-5" />, label: 'Analytics', path: '/admin/analytics' },
-    { id: 'settings', icon: <Settings className="w-5 h-5" />, label: 'Settings', path: '/admin/settings' }
+    {
+      id: "leads",
+      icon: <Users className="w-5 h-5" />,
+      label: "Leads Management",
+      path: "/admin/leads",
+    },
+    {
+      id: "insights",
+      icon: <FileText className="w-5 h-5" />,
+      label: "Client Insights",
+      path: "/admin/insights",
+    },
+    {
+      id: "faq",
+      icon: <MessageSquare className="w-5 h-5" />,
+      label: "FAQ Management",
+      path: "/admin/faq",
+    },
+    {
+      id: "testimonials",
+      icon: <BarChart3 className="w-5 h-5" />,
+      label: "Testimonials",
+      path: "/admin/testimonials",
+    },
   ];
 
   const handleLogout = () => {
     // Implement actual logout logic here
-    console.log('Logging out...');
-    navigate('/'); // Redirect to home page after logout
+    console.log("Logging out...");
+    navigate("/"); // Redirect to home page after logout
   };
 
   return (
@@ -48,7 +67,7 @@ export default function AdminLayout() {
                 key={item.id}
                 to={item.path}
                 className={({ isActive }) =>
-                  `sidebar-nav-button ${isActive ? 'active' : ''}`
+                  `sidebar-nav-button ${isActive ? "active" : ""}`
                 }
               >
                 {item.icon}

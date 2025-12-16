@@ -1,7 +1,7 @@
 import { Target, Eye, Shield, Users, TrendingUp, Award, CheckCircle, BarChart3 } from 'lucide-react';
 import Layout from '../components/Layout';
 import Card, { CardBody } from '../components/Card';
-import { ImageWithFallback } from '../components/figma/ImageWithFallback';
+
 import './About.css';
 
 export default function About() {
@@ -115,7 +115,7 @@ export default function About() {
               </div>
             </div>
             <div>
-              <ImageWithFallback
+              <img
                 src="https://images.unsplash.com/photo-1758518732175-5d608ba3abdf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzcyUyMHRlYW18ZW58MXx8fHwxNzY1NzkyMDIxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
                 alt="HBC Holdings Team"
                 className="who-we-are-image"
@@ -226,7 +226,7 @@ export default function About() {
         <div className="capital-protection-content">
           <div className="capital-protection-grid">
             <div>
-              <ImageWithFallback
+              <img
                 src="https://images.unsplash.com/photo-1634474588578-7f0565a1cea5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBpbnZlc3RtZW50JTIwZmluYW5jZXxlbnwxfHx8fDE3NjU4MDk5NzZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
                 alt="Capital Protection"
                 className="capital-protection-image"

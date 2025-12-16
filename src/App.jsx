@@ -16,15 +16,12 @@ import Footer from "./components/Footer";
 import AdminLayout from "./components/AdminLayout"; // Import the new AdminLayout
 
 // Import new admin sub-pages
-import AdminDashboard from "./pages/AdminDashboard";
+
 import AdminLeads from "./pages/AdminLeads";
-import AdminDivisions from "./pages/AdminDivisions";
+
 import AdminInsights from "./pages/AdminInsights";
 import AdminFAQ from "./pages/AdminFAQ";
 import AdminTestimonials from "./pages/AdminTestimonials";
-import AdminAnalytics from "./pages/AdminAnalytics";
-import AdminSettings from "./pages/AdminSettings";
-
 
 // Layout for pages with Header and Footer
 function DefaultLayout({ children }) {
@@ -36,8 +33,6 @@ function DefaultLayout({ children }) {
     </>
   );
 }
-
-
 
 export default function App() {
   return (
@@ -122,17 +117,15 @@ export default function App() {
           </DefaultLayout>
         }
       />
-      
+
       {/* Admin Routes using AdminLayout */}
       <Route path="/admin" element={<AdminLayout />}>
-        <Route index element={<AdminDashboard />} /> {/* Default child route for /admin */}
+        <Route index element={<AdminLeads />} />{" "}
+        {/* Default child route for /admin */}
         <Route path="leads" element={<AdminLeads />} />
-        <Route path="divisions" element={<AdminDivisions />} />
         <Route path="insights" element={<AdminInsights />} />
         <Route path="faq" element={<AdminFAQ />} />
         <Route path="testimonials" element={<AdminTestimonials />} />
-        <Route path="analytics" element={<AdminAnalytics />} />
-        <Route path="settings" element={<AdminSettings />} />
       </Route>
     </Routes>
   );

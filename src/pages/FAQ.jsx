@@ -151,7 +151,7 @@ export default function FAQ() {
               <HelpCircle className="faq-hero-icon" />
             </div>
             <h1 className="faq-hero-title">
-              Frequently Asked <span className="faq-hero-title-highlight">Questions</span>
+              Frequently Asked  <span className="faq-hero-title-highlight">Questions</span>
             </h1>
             <p className="faq-hero-description">
               Find answers to common questions about investing with HBC Holdings, our process, 
