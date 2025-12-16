@@ -88,7 +88,7 @@ export default function InvestorHub() {
         <div className="investor-hub-hero-content">
           <div className="investor-hub-hero-text-container">
             <h1 className="investor-hub-hero-title">
-              Investor <span className="investor-hub-hero-title-highlight">Information Hub</span>
+              Investor <span className="investor-hub-hero-title-highlight1">Information Hub</span>
             </h1>
             <p className="investor-hub-hero-description">
               Everything you need to understand our investment process, capital protection framework, 

@@ -98,10 +98,9 @@ export default function Home() {
               </span>
             </div>
             <h1 className="home-hero-title">
-              Asset-Backed. Secure. <br />
-              <span className="home-hero-title-highlight">
-                Structured Investments.
-              </span>
+              Asset-Backed. Secure. <br /> 
+             <p className="small-heading">Structured Investments</p> 
+              
             </h1>
             <p className="home-hero-description">
               HBC Holdings provides institutional-grade investment opportunities

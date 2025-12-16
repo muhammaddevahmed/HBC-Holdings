@@ -143,7 +143,7 @@
 }
 
 .home-hero-title-highlight {
-  color: #5DD923;
+  color: white;
   position: relative;
   display: inline-block;
 }
@@ -947,4 +947,8 @@
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.small-heading{
+  font-size: 26px;
 }

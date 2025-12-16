@@ -96,22 +96,7 @@ export default function About() {
                 Every dollar of management fee is reinvested into deal sourcing, due diligence, and investor services.
               </p>
               <div className="stats-grid">
-                <div className="stat-item">
-                  <div className="stat-value">$250M+</div>
-                  <div className="stat-label">Assets Under Management</div>
-                </div>
-                <div className="stat-item">
-                  <div className="stat-value">500+</div>
-                  <div className="stat-label">Active Investors</div>
-                </div>
-                <div className="stat-item">
-                  <div className="stat-value">15+</div>
-                  <div className="stat-label">Years Experience</div>
-                </div>
-                <div className="stat-item">
-                  <div className="stat-value">98%</div>
-                  <div className="stat-label">Retention Rate</div>
-                </div>
+                
               </div>
             </div>
             <div>
