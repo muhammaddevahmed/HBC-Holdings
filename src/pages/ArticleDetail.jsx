@@ -9,7 +9,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Layout from "../components/Layout";
-import { featuredArticle, articles } from "./articles";
+import { featuredArticle, articles } from "./Articles";
 import "./ArticleDetail.css";
 
 export default function ArticleDetail() {

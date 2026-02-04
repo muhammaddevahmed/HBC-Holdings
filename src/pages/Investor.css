@@ -1,0 +1,505 @@
+/* InvestorPage.css */
+
+/* Base Styles & Variables */
+:root {
+  --brand-green: #1f4d2e;
+  --support-green: #2e6b43;
+  --background: #fdf4e9;
+  --main-text: #1f1f1f;
+  --legal-text: #4a3b2a;
+  --accent-gold: #c8a24d;
+  --accent-orange: #d97706;
+  --light-gray: #f5f5f5;
+  --medium-gray: #e0e0e0;
+  --dark-gray: #555;
+  --white: #ffffff;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 6px 16px rgba(0, 0, 0, 0.12);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background-color: var(--background);
+  color: var(--main-text);
+  line-height: 1.6;
+}
+
+.investor-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header Styles */
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--medium-gray);
+}
+
+.page-header h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--brand-green);
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+.header-subtitle {
+  font-size: 1.2rem;
+  color: var(--dark-gray);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Tabs Styles */
+.tabs-container {
+  background-color: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.tabs-header {
+  display: flex;
+  border-bottom: 1px solid var(--medium-gray);
+  background-color: var(--light-gray);
+}
+
+.tab-button {
+  flex: 1;
+  padding: 20px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  color: var(--dark-gray);
+  position: relative;
+}
+
+.tab-button:hover {
+  background-color: rgba(31, 77, 46, 0.05);
+  color: var(--brand-green);
+}
+
+.tab-button.active {
+  color: var(--brand-green);
+  background-color: var(--white);
+}
+
+.tab-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--brand-green);
+}
+
+.tab-content {
+  padding: 40px;
+}
+
+/* Section Headers */
+.section-header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.section-header h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--brand-green);
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--dark-gray);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Metrics Section */
+.metrics-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  margin-bottom: 50px;
+}
+
+.metric-card {
+  background-color: var(--light-gray);
+  border-radius: 10px;
+  padding: 25px 20px;
+  text-align: center;
+  border: 1px solid var(--medium-gray);
+  transition: var(--transition);
+}
+
+.metric-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--support-green);
+}
+
+.metric-value {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--brand-green);
+  margin-bottom: 8px;
+}
+
+.metric-subtext {
+  font-size: 1.6rem;
+  color: var(--dark-gray);
+}
+
+.metric-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--dark-gray);
+}
+
+/* Testimonials */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.testimonial-card {
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 30px;
+  border: 1px solid var(--medium-gray);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--accent-gold);
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--main-text);
+  margin-bottom: 25px;
+  flex-grow: 1;
+  font-style: italic;
+}
+
+.testimonial-author {
+  border-top: 1px solid var(--medium-gray);
+  padding-top: 20px;
+}
+
+.author-name {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--brand-green);
+  margin-bottom: 10px;
+}
+
+.author-details {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+}
+
+.detail-item {
+  font-size: 0.95rem;
+  color: var(--dark-gray);
+}
+
+.detail-label {
+  font-weight: 600;
+  color: var(--main-text);
+}
+
+/* Privacy Note */
+.privacy-note {
+  background-color: rgba(31, 77, 46, 0.05);
+  border-left: 4px solid var(--legal-text);
+  padding: 20px 25px;
+  margin-bottom: 50px;
+  border-radius: 0 8px 8px 0;
+}
+
+.privacy-note p {
+  font-size: 0.95rem;
+  color: var(--legal-text);
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.cta-section, .additional-questions {
+  text-align: center;
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(31, 77, 46, 0.03) 0%, rgba(46, 107, 67, 0.03) 100%);
+  border-radius: 12px;
+  margin-top: 40px;
+}
+
+.cta-section h3, .additional-questions h3 {
+  font-size: 1.8rem;
+  color: var(--brand-green);
+  margin-bottom: 12px;
+}
+
+.cta-subtitle {
+  font-size: 1.1rem;
+  color: var(--dark-gray);
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 16px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  border: none;
+  min-width: 180px;
+}
+
+.btn-primary {
+  background-color: var(--brand-green);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--support-green);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(31, 77, 46, 0.2);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--brand-green);
+  border: 2px solid var(--brand-green);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(31, 77, 46, 0.05);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(31, 77, 46, 0.1);
+}
+
+/* FAQ Styles */
+.faq-container {
+  margin-bottom: 40px;
+}
+
+.faq-category {
+  margin-bottom: 40px;
+}
+
+.faq-category-title {
+  font-size: 1.6rem;
+  color: var(--brand-green);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(31, 77, 46, 0.1);
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  border: 1px solid var(--medium-gray);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 20px 25px;
+  text-align: left;
+  background-color: var(--white);
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--main-text);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.faq-question:hover {
+  background-color: rgba(31, 77, 46, 0.05);
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--brand-green);
+}
+
+.faq-answer {
+  padding: 0 25px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background-color: var(--light-gray);
+}
+
+.faq-item.active .faq-answer {
+  padding: 20px 25px;
+  max-height: 500px;
+}
+
+.faq-answer p {
+  color: var(--dark-gray);
+  line-height: 1.7;
+}
+
+.additional-questions {
+  margin-top: 60px;
+}
+
+.additional-questions p {
+  font-size: 1.1rem;
+  color: var(--dark-gray);
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .investor-page {
+    padding: 15px;
+  }
+  
+  .page-header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .header-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .tabs-header {
+    flex-direction: column;
+  }
+  
+  .tab-button {
+    padding: 16px 20px;
+    text-align: center;
+  }
+  
+  .tab-content {
+    padding: 25px 20px;
+  }
+  
+  .metrics-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .metric-card {
+    padding: 20px 15px;
+  }
+  
+  .metric-value {
+    font-size: 2.2rem;
+  }
+  
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .metrics-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .page-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .section-header h2 {
+    font-size: 1.6rem;
+  }
+  
+  .faq-question {
+    padding: 16px 20px;
+    font-size: 1rem;
+  }
+  
+  .testimonial-card {
+    padding: 20px;
+  }
+}
+
+/* Animation for FAQ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.testimonial-card, .metric-card, .faq-item {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Add some interactive elements */
+.testimonial-card:nth-child(2n) {
+  border-top-color: var(--accent-gold);
+}
+
+.testimonial-card:nth-child(3n) {
+  border-top-color: var(--support-green);
+}

@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
-import { Search, Download, Eye, Edit, Users, DollarSign, MessageSquare, Upload, X, Filter, Calendar, Target, Phone, MapPin } from 'lucide-react';
+import { Search, Download, Eye, Edit, Users, DollarSign, MessageSquare, Upload, X, Filter, Calendar, Target, Phone, MapPin, Check, Send, ThumbsDown } from 'lucide-react';
 import './AdminLeads.css';
 
-const LeadModal = ({ isOpen, onClose, onSubmit, initialData }) => {
-  const [formData, setFormData] = useState(initialData || {
+const LeadModal = ({ isOpen, onClose, onSubmit }) => {
+  const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
@@ -53,7 +53,9 @@ const LeadModal = ({ isOpen, onClose, onSubmit, initialData }) => {
     { value: 'Contacted', label: 'Contacted', color: 'yellow' },
     { value: 'Qualified', label: 'Qualified', color: 'green' },
     { value: 'In Process', label: 'In Process', color: 'purple' },
-    { value: 'Closed', label: 'Closed', color: 'gray' }
+    { value: 'Closed', label: 'Closed', color: 'gray' },
+    { value: 'Accepted', label: 'Accepted', color: 'cyan' },
+    { value: 'Rejected', label: 'Rejected', color: 'red' }
   ];
 
   const handleSubmit = (e) => {
@@ -69,7 +71,7 @@ const LeadModal = ({ isOpen, onClose, onSubmit, initialData }) => {
       <div className="lead-modal-content" onClick={e => e.stopPropagation()}>
         <div className="lead-modal-header">
           <h3 className="lead-modal-title">
-            {initialData ? 'Edit Lead' : 'Add New Lead'}
+            Add New Lead
           </h3>
           <button className="lead-modal-close" onClick={onClose}>
             <X className="w-5 h-5" />
@@ -240,7 +242,7 @@ const LeadModal = ({ isOpen, onClose, onSubmit, initialData }) => {
               Cancel
             </button>
             <button type="submit" className="btn-submit">
-              {initialData ? 'Update Lead' : 'Add Lead'}
+              Add Lead
             </button>
           </div>
         </form>
@@ -259,6 +261,8 @@ const LeadViewModal = ({ isOpen, onClose, lead }) => {
       case 'Qualified': return 'status-qualified';
       case 'In Process': return 'status-in-process';
       case 'Closed': return 'status-closed';
+      case 'Accepted': return 'status-accepted';
+      case 'Rejected': return 'status-rejected';
       default: return 'status-new';
     }
   };
@@ -351,7 +355,8 @@ export default function AdminLeads() {
       status: 'New',
       source: 'Website Form',
       notes: 'Interested in electric vehicle investments. Requested more information about automotive division.',
-      experience: 'Experienced'
+      experience: 'Experienced',
+      kycSent: false
     },
     {
       id: 2,
@@ -366,7 +371,8 @@ export default function AdminLeads() {
       status: 'Contacted',
       source: 'Referral',
       notes: 'Referred by Michael Chen. Very interested in sustainable energy projects.',
-      experience: 'Professional'
+      experience: 'Professional',
+      kycSent: false
     },
     {
       id: 3,
@@ -381,7 +387,8 @@ export default function AdminLeads() {
       status: 'New',
       source: 'Email Campaign',
       notes: 'Looking for diversified portfolio options. Beginner investor.',
-      experience: 'Beginner'
+      experience: 'Beginner',
+      kycSent: false
     },
     {
       id: 4,
@@ -396,7 +403,8 @@ export default function AdminLeads() {
       status: 'Qualified',
       source: 'Event',
       notes: 'Met at investment conference. Interested in alternative assets.',
-      experience: 'Intermediate'
+      experience: 'Intermediate',
+      kycSent: false
     },
     {
       id: 5,
@@ -411,7 +419,8 @@ export default function AdminLeads() {
       status: 'In Process',
       source: 'Website Form',
       notes: 'High net worth individual. Wants comprehensive investment portfolio across all divisions.',
-      experience: 'Professional'
+      experience: 'Professional',
+      kycSent: false
     }
   ]);
 
@@ -420,7 +429,6 @@ export default function AdminLeads() {
   const [interestFilter, setInterestFilter] = useState('All');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isViewModalOpen, setIsViewModalOpen] = useState(false);
-  const [editingLead, setEditingLead] = useState(null);
   const [viewingLead, setViewingLead] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(10);
@@ -482,14 +490,10 @@ export default function AdminLeads() {
   const totalPages = Math.ceil(filteredLeads.length / itemsPerPage);
 
   const handleAddLead = () => {
-    setEditingLead(null);
     setIsModalOpen(true);
   };
 
-  const handleEditLead = (lead) => {
-    setEditingLead(lead);
-    setIsModalOpen(true);
-  };
+
 
   const handleViewLead = (lead) => {
     setViewingLead(lead);
@@ -502,25 +506,33 @@ export default function AdminLeads() {
     }
   };
 
+  const handleAcceptLead = (id) => {
+    setLeads(leads.map(lead =>
+      lead.id === id ? { ...lead, status: 'Accepted' } : lead
+    ));
+  };
+
+  const handleRejectLead = (id) => {
+    setLeads(leads.map(lead =>
+      lead.id === id ? { ...lead, status: 'Rejected' } : lead
+    ));
+  };
+
+  const handleSendKyc = (id) => {
+    setLeads(leads.map(lead =>
+      lead.id === id ? { ...lead, kycSent: true } : lead
+    ));
+    alert('KYC form link sent!');
+  };
+
   const handleSubmitLead = (formData) => {
-    if (editingLead) {
-      // Update existing lead
-      setLeads(leads.map(lead => 
-        lead.id === editingLead.id ? { 
-          ...lead, 
-          ...formData,
-          date: new Date().toISOString().split('T')[0]
-        } : lead
-      ));
-    } else {
-      // Add new lead
-      const newLead = {
-        id: Date.now(),
-        ...formData,
-        date: new Date().toISOString().split('T')[0]
-      };
-      setLeads([...leads, newLead]);
-    }
+    const newLead = {
+      id: Date.now(),
+      ...formData,
+      date: new Date().toISOString().split('T')[0],
+      kycSent: false
+    };
+    setLeads([...leads, newLead]);
   };
 
   const handleExportCSV = () => {
@@ -607,11 +619,13 @@ export default function AdminLeads() {
       case 'Qualified': return 'status-qualified';
       case 'In Process': return 'status-in-process';
       case 'Closed': return 'status-closed';
+      case 'Accepted': return 'status-accepted';
+      case 'Rejected': return 'status-rejected';
       default: return 'status-new';
     }
   };
 
-  const statusOptions = ['All', 'New', 'Contacted', 'Qualified', 'In Process', 'Closed'];
+  const statusOptions = ['All', 'New', 'Contacted', 'Qualified', 'In Process', 'Closed', 'Accepted', 'Rejected'];
   const interestOptions = ['All', 'Diversified', 'Automotive', 'Sustainable', 'Technology', 'Real Estate', 'Healthcare', 'Infrastructure', 'Consumer Goods', 'All Divisions'];
 
   return (
@@ -759,27 +773,41 @@ export default function AdminLeads() {
                     </td>
                     <td>
                       <div className="lead-actions">
-                        <button 
+                        <button
                           className="lead-action-button view"
                           onClick={() => handleViewLead(lead)}
                           title="View Details"
                         >
                           <Eye className="w-4 h-4" />
                         </button>
-                        <button 
-                          className="lead-action-button edit"
-                          onClick={() => handleEditLead(lead)}
-                          title="Edit"
-                        >
-                          <Edit className="w-4 h-4" />
-                        </button>
-                        <button 
-                          className="lead-action-button delete"
-                          onClick={() => handleDeleteLead(lead.id)}
-                          title="Delete"
-                        >
-                          <X className="w-4 h-4" />
-                        </button>
+                        {lead.status !== 'Accepted' && lead.status !== 'Rejected' && (
+                          <>
+                            <button
+                              className="lead-action-button accept"
+                              onClick={() => handleAcceptLead(lead.id)}
+                              title="Accept"
+                            >
+                              <Check className="w-4 h-4" />
+                            </button>
+                            <button
+                              className="lead-action-button reject"
+                              onClick={() => handleRejectLead(lead.id)}
+                              title="Reject"
+                            >
+                              <ThumbsDown className="w-4 h-4" />
+                            </button>
+                          </>
+                        )}
+                        {lead.status === 'Accepted' && !lead.kycSent && (
+                          <button
+                            className="lead-action-button send-kyc"
+                            onClick={() => handleSendKyc(lead.id)}
+                            title="Send KYC Form Link"
+                          >
+                            <Send className="w-4 h-4" />
+                          </button>
+                        )}
+
                       </div>
                     </td>
                   </tr>
@@ -841,10 +869,8 @@ export default function AdminLeads() {
         isOpen={isModalOpen}
         onClose={() => {
           setIsModalOpen(false);
-          setEditingLead(null);
         }}
         onSubmit={handleSubmitLead}
-        initialData={editingLead}
       />
 
       {/* View Modal */}

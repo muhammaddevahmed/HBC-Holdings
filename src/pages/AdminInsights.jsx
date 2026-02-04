@@ -15,18 +15,9 @@ import {
 } from "lucide-react";
 import Card, { CardBody } from "../components/Card";
 import "./AdminInsights.css";
+import { categories as websiteCategories } from "./Articles";
 
-const categories = [
-  "Market Analysis",
-  "Sustainable Markets",
-  "Automotive Division",
-  "Alternative Investments",
-  "Risk Management",
-  "Performance Update",
-  "Regulatory",
-  "ESG & Impact",
-  "Investor Stories",
-];
+const categories = websiteCategories.map((c) => c.name);
 
 const InsightModal = ({ isOpen, onClose, onSubmit, initialData }) => {
   const [formData, setFormData] = useState(
@@ -39,7 +30,7 @@ const InsightModal = ({ isOpen, onClose, onSubmit, initialData }) => {
       excerpt: "",
       content: "",
       isFeatured: false,
-    }
+    },
   );
 
   const fileInputRef = useRef(null);
@@ -340,8 +331,8 @@ export default function AdminInsights() {
     if (editingInsight) {
       setInsights(
         insights.map((i) =>
-          i.id === editingInsight.id ? { ...i, ...data } : i
-        )
+          i.id === editingInsight.id ? { ...i, ...data } : i,
+        ),
       );
     } else {
       setInsights([...insights, { ...data, id: Date.now(), views: 0 }]);
@@ -471,7 +462,7 @@ export default function AdminInsights() {
                                 month: "short",
                                 day: "numeric",
                                 year: "numeric",
-                              }
+                              },
                             )}
                           </span>
                         </div>

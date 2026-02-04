@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink, Outlet, useNavigate, Navigate } from "react-router-dom";
+import { NavLink, Outlet, useNavigate, Navigate, Link } from "react-router-dom";
 import {
   Users,
   MessageSquare,
@@ -8,13 +8,14 @@ import {
   BarChart3,
   Menu,
   X,
+  Settings,
 } from "lucide-react";
 import "../pages/Admin.css";
 
 export default function AdminLayout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const navigate = useNavigate();
-  
+
   const navigation = [
     {
       id: "leads",
@@ -29,16 +30,22 @@ export default function AdminLayout() {
       path: "/admin/insights",
     },
     {
-      id: "faq",
-      icon: <MessageSquare className="w-5 h-5" />,
-      label: "FAQ Management",
-      path: "/admin/faq",
-    },
-    {
       id: "testimonials",
       icon: <BarChart3 className="w-5 h-5" />,
       label: "Testimonials",
       path: "/admin/testimonials",
+    },
+    {
+      id: "job-post",
+      icon: <MessageSquare className="w-5 h-5" />,
+      label: "Job Post",
+      path: "/admin/job-post",
+    },
+    {
+      id: "settings",
+      icon: <Settings className="w-5 h-5" />,
+      label: "Settings",
+      path: "/admin/settings",
     },
   ];
 
@@ -64,23 +71,30 @@ export default function AdminLayout() {
   return (
     <div className="admin-layout">
       {/* Mobile Toggle Button */}
-      <button 
-        className={`mobile-toggle ${isSidebarOpen ? 'active' : ''}`}
+      <button
+        className={`mobile-toggle ${isSidebarOpen ? "active" : ""}`}
         onClick={toggleSidebar}
         aria-label="Toggle menu"
       >
-        {isSidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        {isSidebarOpen ? (
+          <X className="w-5 h-5" />
+        ) : (
+          <Menu className="w-5 h-5" />
+        )}
       </button>
 
       {/* Sidebar */}
-      <div className={`sidebar ${isSidebarOpen ? 'active' : ''}`}>
+      <div className={`sidebar ${isSidebarOpen ? "active" : ""}`}>
         <div className="sidebar-header">
           <div className="sidebar-header-content">
-            <div className="sidebar-logo">
-              <span className="sidebar-logo-text">HBC</span>
-            </div>
+            <Link to="/">
+              <img
+                src="../public/logo.png"
+                alt="HBC Logo"
+                style={{ height: "5rem" }}
+              />
+            </Link>
             <div>
-              <div className="sidebar-title">HBC Holdings</div>
               <div className="sidebar-subtitle">Admin Panel</div>
             </div>
           </div>
@@ -106,10 +120,7 @@ export default function AdminLayout() {
         </nav>
 
         <div className="sidebar-footer">
-          <button 
-            onClick={handleLogout} 
-            className="sidebar-nav-button logout"
-          >
+          <button onClick={handleLogout} className="sidebar-nav-button logout">
             <LogOut className="w-5 h-5" />
             <span>Logout</span>
           </button>
@@ -117,7 +128,10 @@ export default function AdminLayout() {
       </div>
 
       {/* Main Content */}
-      <div className="main-content" onClick={() => isSidebarOpen && closeSidebar()}>
+      <div
+        className="main-content"
+        onClick={() => isSidebarOpen && closeSidebar()}
+      >
         <div className="main-content-inner">
           <Outlet />
         </div>

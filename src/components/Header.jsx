@@ -5,35 +5,18 @@ import "./Layout.css";
 
 export default function Header({ activePage }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [investmentsOpen, setInvestmentsOpen] = useState(false);
   const [pagesOpen, setPagesOpen] = useState(false);
 
   const navigation = [
     { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    {
-      name: "Investments",
-      href: "/investments",
-      hasDropdown: true,
-      subItems: [
-        { name: "All Divisions", href: "/investments" },
-        { name: "Luxury Automotive & Logistics", href: "/investments" },
-        { name: "Sustainable & Emerging Markets", href: "/investments" },
-        { name: "Alternative Investments", href: "/investments" },
-      ],
-    },
-    { name: "Investor Hub", href: "/investor-hub" },
-    { name: "Insights", href: "/insights" },
-    {
-      name: "Pages",
-      href: "#",
-      hasDropdown: true,
-      subItems: [
-        { name: "Testimonials", href: "/testimonials" },
-        { name: "FAQ", href: "/faq" },
-      ],
-    },
-    { name: "Contact", href: "/contact" },
+    { name: "AboutUs", href: "/about" },
+    { name: "Investment Programs", href: "/investments" },
+    { name: "Investor Resources", href: "/investor-hub" },
+    { name: "News&Insights", href: "/insights" },
+    { name: "Investor", href: "/investor" },
+    { name: "Contact Us", href: "/contact" },
+    { name: "Legal&Compliance", href: "/legal" },
+
   ];
 
   return (
@@ -43,13 +26,8 @@ export default function Header({ activePage }) {
           {/* Logo */}
           <div className="logo-container">
             <Link to="/" className="logo-link">
-              <div className="logo">
-                <span className="logo-text">HBC</span>
-              </div>
-              <div className="logo-details">
-                <div className="logo-title">HBC Holdings</div>
-                <div className="logo-subtitle">Structured Investments</div>
-              </div>
+              <img src="../public/logo.png" alt="HBC Holdings Logo" />
+              
             </Link>
           </div>
 
@@ -97,9 +75,7 @@ export default function Header({ activePage }) {
             <Link to="/login" className="nav-link">
               Login
             </Link>
-            <Link to="/express-interest" className="express-interest-button">
-              Express Interest
-            </Link>
+
           </div>
 
           {/* Mobile menu button */}
@@ -125,8 +101,6 @@ export default function Header({ activePage }) {
                     <>
                       <button
                         onClick={() => {
-                          if (item.name === "Investments")
-                            setInvestmentsOpen(!investmentsOpen);
                           if (item.name === "Pages") setPagesOpen(!pagesOpen);
                         }}
                         className="mobile-nav-button"
@@ -134,15 +108,13 @@ export default function Header({ activePage }) {
                         {item.name}
                         <ChevronDown
                           className={`mobile-dropdown-arrow ${
-                            (item.name === "Investments" && investmentsOpen) ||
                             (item.name === "Pages" && pagesOpen)
                               ? "open"
                               : ""
                           }`}
                         />
                       </button>
-                      {((item.name === "Investments" && investmentsOpen) ||
-                        (item.name === "Pages" && pagesOpen)) && (
+                      {(item.name === "Pages" && pagesOpen) && (
                         <div className="mobile-dropdown-menu">
                           {item.subItems.map((subItem) => (
                             <Link
@@ -171,12 +143,7 @@ export default function Header({ activePage }) {
               <Link to="/login" className="mobile-nav-link">
                 Login
               </Link>
-              <Link
-                to="/express-interest"
-                className="mobile-express-interest-button"
-              >
-                Express Interest
-              </Link>
+
             </div>
           </div>
         )}

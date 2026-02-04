@@ -15,6 +15,12 @@ import {
   BarChart3,
   Target,
   Sparkles,
+  Building,
+  Globe,
+  Lock,
+  Zap,
+  Users,
+  Award
 } from "lucide-react";
 import Layout from "../components/Layout";
 import Button from "../components/Button";
@@ -24,302 +30,302 @@ import "./Investments.css";
 export default function Investments() {
   const divisions = [
     {
-      id: "automotive",
+      id: "mobility",
       icon: <Car className="w-8 h-8" />,
-      title: "Luxury Automotive & Logistics",
-      subtitle: "High-Value Asset Investments",
+      title: "Mobility Investment Series",
+      subtitle: "High-Value Asset & Logistics Investments",
       description:
-        "Strategic investments in luxury and exotic automotive assets, combined with logistics infrastructure that serves high-value transportation needs. Each investment is backed by physical assets with verified market value and strong liquidity profiles.",
+        "The Mobility Series focuses on investments backed by high-value automotive assets and specialized logistics operations supporting premium transportation and asset utilization. Capital is deployed into assets with established market demand, verifiable value, and liquidity characteristics.",
       image:
-        "https://images.unsplash.com/photo-1742056024244-02a093dae0b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBzcG9ydHMlMjBjYXJ8ZW58MXx8fHwxNzY1NzEzNTc3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+        "https://images.unsplash.com/photo-1742056024244-02a093dae0b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBhdXRvbW90aXZlJTIwYXNzZXRzfGVufDF8fHx8MTc2NTg1NDU0OHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       details: {
         minInvestment: "$50,000",
+        minDuration: "24 months",
         targetReturns: "12-18% annually",
-        duration: "24-36 months",
-        riskLevel: "Moderate",
-        liquidity: "Quarterly redemption windows",
+        riskProfile: "Moderate",
+        liquidity: "Quarterly redemption windows"
       },
       features: [
-        "Physical custody of all automotive assets",
-        "Independent appraisals from certified valuers",
-        "Insurance coverage for full asset value",
-        "Diversification across multiple vehicle categories",
-        "Professional storage and maintenance",
-        "Exit strategy through established dealer networks",
+        "Physical custody of automotive assets under HBC supervision",
+        "Comprehensive insurance coverage based on asset value",
+        "Diversification across vehicle types and usage profiles",
+        "Professional storage, maintenance, and asset management",
+        "Exposure to both asset value and operational revenue streams"
       ],
       capitalProtection: [
-        "Asset value typically exceeds loan-to-value ratio of 60%",
-        "Monthly market value monitoring",
-        "Comprehensive insurance coverage",
-        "Legal ownership structure with clear investor priority",
+        "Regular market value monitoring and reassessment",
+        "Insurance coverage aligned with asset replacement value",
+        "Structured exit and asset liquidation procedures"
       ],
       investmentStructure:
-        "Investors participate through a dedicated special purpose vehicle (SPV) that holds title to the underlying automotive assets and logistics contracts. Returns are generated through a combination of asset appreciation, rental income, and logistics service fees.",
+        "Investments are backed directly by luxury vehicles, mobility fleets, and transportation-related revenue assets. Capital is deployed through structured contractual arrangements supported by asset documentation, and defined settlement terms. Returns may be generated through a combination of asset utilization and leasing income, logistics and service-related revenue, and selective asset rotation or disposal.",
+      returnsDescription: "Asset utilization and leasing income, logistics revenue, asset appreciation"
     },
     {
       id: "sustainable",
       icon: <Leaf className="w-8 h-8" />,
-      title: "Sustainable & Emerging Markets",
-      subtitle: "Growth-Oriented Green Investments",
+      title: "Sustainable & Eco-Investment Series",
+      subtitle: "Infrastructure, Sustainability & Emerging Market Exposure",
       description:
-        "Focused investments in renewable energy projects, sustainable agriculture, and emerging market opportunities that combine environmental impact with attractive financial returns. Our approach targets projects with strong fundamentals in rapidly growing sectors.",
+        "The Sustainable & Eco-Investment Series focuses on revenue-generating sustainable projects across renewable energy, clean infrastructure, agriculture, and eco-friendly developments in select emerging markets. Our approach emphasizes projects with operational traction, defined cash flows, and alignment with long-term environmental trends.",
       image:
-        "https://images.unsplash.com/photo-1758448617761-09367c1748d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdXN0YWluYWJsZSUyMGdyZWVuJTIwaW52ZXN0bWVudHxlbnwxfHx8fDE3NjU4MDk5NzZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+        "https://images.unsplash.com/photo-1758448617761-09367c1748d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZW5ld2FibGUlMjBlbmVyZ3klMjBwcm9qZWN0c3xlbnwxfHx8fDE3NjU4NTQ1ODB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       details: {
-        minInvestment: "$25,000",
+        minInvestment: "$100,000",
+        minDuration: "24 months",
         targetReturns: "15-22% annually",
-        duration: "36-48 months",
-        riskLevel: "Moderate-High",
-        liquidity: "Annual redemption windows",
+        riskProfile: "Moderate to High",
+        liquidity: "Annual redemption windows"
       },
       features: [
-        "Focus on revenue-generating sustainable projects",
-        "Geographic diversification across emerging markets",
-        "Partnership with established local operators",
-        "Government incentives and subsidies where applicable",
-        "Environmental impact reporting",
-        "Alignment with ESG investment criteria",
+        "Exposure to income-producing sustainable projects",
+        "Geographic diversification across select developing markets",
+        "Partnerships with experienced local operators",
+        "Access to government incentives and regulatory support",
+        "Environmental and operational performance reporting",
+        "Alignment with ESG-oriented investment frameworks"
       ],
       capitalProtection: [
-        "Revenue contracts with credit-worthy counterparties",
-        "Physical asset backing (solar panels, equipment, land)",
-        "Political risk insurance in emerging markets",
-        "Local partnership structures for regulatory protection",
+        "Revenue contracts with established counterparties",
+        "Political and regulatory risk mitigation where applicable",
+        "Local partnership structures to support compliance",
+        "Phased capital deployment to manage exposure"
       ],
       investmentStructure:
-        "Investments are structured through project-specific SPVs with clear cash flow priorities. Capital is deployed into operational or near-operational projects with established revenue streams, reducing development risk.",
+        "Capital is allocated into project-specific investment structures tied to operational or near-operational assets. Deployment prioritizes projects with established or contracted revenue streams to reduce development-stage risk. Cash flows are structured with defined priority mechanisms, supporting capital recovery before profit distribution.",
+      returnsDescription: "Project revenue streams, government incentives, environmental credits"
     },
     {
       id: "alternative",
       icon: <Gem className="w-8 h-8" />,
-      title: "Alternative Investments",
+      title: "Alternative Investment Series",
       subtitle: "Diversified Non-Traditional Assets",
       description:
-        "Sophisticated investments in precious metals, commodities, art, collectibles, and other alternative asset classes that provide portfolio diversification and inflation protection. Each opportunity is carefully selected for its store-of-value characteristics and market liquidity.",
+        "The Alternative Investment Series provides access to non-traditional, real-asset-backed opportunities designed to enhance portfolio diversification and provide potential inflation protection. Investments may include precious metals, commodities, secured private lending, trade-backed transactions, and short-cycle real-asset strategies.",
       image:
-        "https://images.unsplash.com/flagged/photo-1554386690-8627e1041100?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbHRlcm5hdGl2ZSUyMGludmVzdG1lbnQlMjBnb2xkfGVufDF8fHx8MTc2NTgwOTk3N3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+        "https://images.unsplash.com/flagged/photo-1554386690-8627e1041100?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbHRlcm5hdGl2ZSUyMGludmVzdG1lbnRzJTIwYXNzZXRzfGVufDF8fHx8MTc2NTg1NDYxNnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       details: {
-        minInvestment: "$100,000",
+        minInvestment: "$20,000",
+        minDuration: "24 months",
         targetReturns: "10-16% annually",
-        duration: "18-60 months",
-        riskLevel: "Moderate",
-        liquidity: "Semi-annual redemption windows",
+        riskProfile: "High",
+        liquidity: "Semi-annual redemption windows"
       },
       features: [
-        "Allocation across multiple alternative asset categories",
-        "Physical storage in secured, insured facilities",
-        "Regular independent valuations",
-        "Access to institutional-grade opportunities",
-        "Low correlation with traditional markets",
-        "Inflation hedge characteristics",
+        "Allocation across multiple alternative asset classes",
+        "Trade-backed and secured lending opportunities",
+        "Short-cycle real-asset investments with defined timelines",
+        "Access to institutional-grade structures",
+        "Low correlation to traditional equity and fixed-income markets"
       ],
       capitalProtection: [
-        "Physical possession and third-party custody",
-        "All-risk insurance coverage",
-        "Diversification across asset types and storage locations",
-        "Independent authentication and grading where applicable",
+        "Structured transactions with defined collateral or security",
+        "Diversification across asset types and counterparties",
+        "Independent verification or documentation where applicable",
+        "Defined recovery and settlement procedures"
       ],
       investmentStructure:
-        "A master fund structure allows for diversification across multiple alternative asset categories while maintaining operational efficiency. Assets are held through specialized custody arrangements with established vault operators and secure storage facilities.",
+        "Investments are deployed through structured contractual arrangements tied to specific assets, trades, or secured positions. Each opportunity is assessed individually, with capital allocated based on asset coverage, transaction duration, and downside risk controls. HBC avoids open-ended exposure and prioritizes clearly defined investment cycles and exit pathways.",
+      returnsDescription: "Asset appreciation, secured lending returns, trade-based profits"
+    }
+  ];
+
+  const investmentHighlights = [
+    {
+      icon: <DollarSign className="w-6 h-6" />,
+      title: "Flexible Entry Points",
+      description: "Minimum investments range from USD 25,000 to USD 100,000 depending on division."
     },
+    {
+      icon: <Building className="w-6 h-6" />,
+      title: "Asset-Backed Focus",
+      description: "Every program is supported by tangible assets, contractual revenue, or secured structures."
+    },
+    {
+      icon: <FileText className="w-6 h-6" />,
+      title: "Defined Investment Terms",
+      description: "Lock-in periods, exit rules, and settlement processes are outlined upfront."
+    },
+    {
+      icon: <Shield className="w-6 h-6" />,
+      title: "Capital Protection Framework",
+      description: "Multi-layered protection measures across all investment programs."
+    },
+    {
+      icon: <Globe className="w-6 h-6" />,
+      title: "Professional Governance",
+      description: "Structured oversight, compliance standards, and transparent reporting."
+    },
+    {
+      icon: <Users className="w-6 h-6" />,
+      title: "Investor Partnership",
+      description: "Long-term alignment with investor interests and objectives."
+    }
   ];
 
   return (
     <Layout activePage="/investments">
-      {/* Hero Section with Gradient Overlay */}
+      {/* Hero Section */}
       <section className="investments-hero-section">
-        <div className="investments-hero-overlay"></div>
+        <div className="hero-pattern"></div>
         <div className="investments-hero-content">
           <div className="investments-hero-text-container">
-            <div className="badge-container">
-              <span className="badge">
-                <Sparkles className="w-4 h-4" />
-                Institutional Grade
-              </span>
+            <div className="hero-badge">
+              <Sparkles className="hero-badge-icon" />
+              <span>Structured Asset-Backed Opportunities</span>
             </div>
             <h1 className="investments-hero-title">
-              Strategic <span className="investments-hero-title-highlight">Investment</span> Divisions
+              Strategic <span className="highlight">Investment Divisions</span>
             </h1>
             <p className="investments-hero-description">
-              Three specialized investment arms, each engineered to deliver superior 
-              risk-adjusted returns through meticulously structured, asset-backed opportunities.
+              Three distinct investment arms designed to provide access to structured, 
+              asset-backed opportunities across multiple sectors. Each division follows 
+              defined investment terms, disciplined deployment, and a focus on capital protection.
             </p>
-            <div className="hero-stats">
-              <div className="stat-item">
-                <div className="stat-number">$25K+</div>
-                <div className="stat-label">Minimum Investment</div>
-              </div>
-              <div className="stat-item">
-                <div className="stat-number">10-22%</div>
-                <div className="stat-label">Target Returns</div>
-              </div>
-              <div className="stat-item">
-                <div className="stat-number">100%</div>
-                <div className="stat-label">Asset Backed</div>
+            
+            <div className="division-navigation">
+              <span className="nav-label">Explore Our Divisions:</span>
+              <div className="nav-buttons">
+                {divisions.map((division) => (
+                  <a
+                    key={division.id}
+                    href={`#${division.id}`}
+                    className="nav-button"
+                  >
+                    {division.icon}
+                    <span>{division.title.split(" ")[0]}</span>
+                  </a>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Navigation Tabs */}
-      <section className="division-nav-section">
-        <div className="division-nav-content">
-          <h3 className="division-nav-title">Explore Our Divisions</h3>
-          <div className="division-nav-tabs">
-            {divisions.map((division) => (
-              <a
-                key={division.id}
-                href={`#${division.id}`}
-                className="division-nav-tab"
-              >
-                {division.icon}
-                <span>{division.title.split(" ")[0]}</span>
-                <ChevronRight className="w-4 h-4" />
-              </a>
+      {/* Why Invest Section */}
+      <section className="why-invest-section">
+        <div className="why-invest-content">
+          <div className="section-header">
+            <h2 className="section-title">
+              Institutional Discipline. <span className="accent">Practical Structures.</span>
+            </h2>
+            <p className="section-subtitle">
+              HBC combines institutional investment discipline with pragmatic execution, 
+              offering qualified investors access to non-traditional opportunities through 
+              clear structures and defined risk frameworks.
+            </p>
+          </div>
+
+          <div className="highlights-grid">
+            {investmentHighlights.map((highlight, index) => (
+              <Card key={index} className="highlight-card">
+                <CardBody>
+                  <div className="highlight-card-content">
+                    <div className="highlight-icon">
+                      {highlight.icon}
+                    </div>
+                    <h3 className="highlight-title">{highlight.title}</h3>
+                    <p className="highlight-description">{highlight.description}</p>
+                  </div>
+                </CardBody>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Overview Cards with Hover Effects */}
-      <section className="overview-cards-section">
-        <div className="overview-cards-content">
-          <h3 className="section-heading">Why Invest With Us</h3>
-          <p className="section-subheading">
-            Combining institutional rigor with innovative investment strategies
-          </p>
-          <div className="overview-cards-grid">
-            <div className="overview-card overview-card-1">
-              <div className="overview-card-inner">
-                <DollarSign className="overview-card-icon" />
-                <h4 className="overview-card-title">Flexible Entry Points</h4>
-                <p className="overview-card-description">
-                  Minimum investments starting from $25,000 across different divisions
-                </p>
-                <div className="overview-card-cta">
-                  <span>Learn more</span>
-                  <ArrowRight className="w-4 h-4" />
-                </div>
-              </div>
-            </div>
-            <div className="overview-card overview-card-2">
-              <div className="overview-card-inner">
-                <Shield className="overview-card-icon" />
-                <h4 className="overview-card-title">Asset-Backed Security</h4>
-                <p className="overview-card-description">
-                  Every investment secured by tangible, independently valued assets
-                </p>
-                <div className="overview-card-cta">
-                  <span>Learn more</span>
-                  <ArrowRight className="w-4 h-4" />
-                </div>
-              </div>
-            </div>
-            <div className="overview-card overview-card-3">
-              <div className="overview-card-inner">
-                <TrendingUp className="overview-card-icon" />
-                <h4 className="overview-card-title">Consistent Returns</h4>
-                <p className="overview-card-description">
-                  Target returns of 10-22% annually depending on division and risk profile
-                </p>
-                <div className="overview-card-cta">
-                  <span>Learn more</span>
-                  <ArrowRight className="w-4 h-4" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Division Details with Enhanced Styling */}
+      {/* Division Details */}
       {divisions.map((division, index) => (
         <section
           key={division.id}
           id={division.id}
-          className={`division-details-section ${
-            index % 2 === 0 ? "even" : "odd"
-          }`}
+          className={`division-section ${index % 2 === 0 ? "even" : "odd"}`}
         >
-          <div className="division-details-content">
+          <div className="division-content">
             <div className="division-header">
-              <div className="division-badge">
-                <div className="division-icon-container">{division.icon}</div>
-                <span>Division {index + 1}</span>
+              <div className="division-label">
+                <div className="division-icon">{division.icon}</div>
+                <span>Division {String.fromCharCode(65 + index)}</span>
               </div>
+              <h2 className="division-title">{division.title}</h2>
+              <p className="division-subtitle">{division.subtitle}</p>
             </div>
-            <div
-              className={`division-details-grid ${
-                index % 2 === 1 ? "odd" : ""
-              }`}
-            >
-              {/* Image with Overlay */}
-              <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
-                <div className="division-image-container">
-                  <img
-                    src={division.image}
-                    alt={division.title}
-                    className="division-image"
-                  />
-                  <div className="division-image-overlay">
-                    <div className="overlay-badge">
-                      <Target className="w-4 h-4" />
-                      Institutional Focus
-                    </div>
+
+            <div className="division-grid">
+              <div className="division-image-container">
+                <img
+                  src={division.image}
+                  alt={division.title}
+                  className="division-image"
+                />
+                <div className="image-overlay">
+                  <div className="overlay-badge">
+                    <Target className="w-4 h-4" />
+                    <span>Structured Investment</span>
                   </div>
                 </div>
               </div>
 
-              {/* Content */}
-              <div
-                className={`division-content ${
-                  index % 2 === 1 ? "odd" : "even"
-                }`}
-              >
-                <h2 className="division-title">{division.title}</h2>
-                <p className="division-subtitle">{division.subtitle}</p>
-                <p className="division-description">{division.description}</p>
+              <div className="division-details">
+                <div className="overview-section">
+                  <h3 className="section-heading">Overview</h3>
+                  <p className="overview-text">{division.description}</p>
+                </div>
 
-                {/* Key Details Card with Enhanced Design */}
-                <Card className="investment-details-card">
-                  <CardHeader>
-                    <div className="card-header-icon">
-                      <BarChart3 className="w-5 h-5" />
+                {/* Investment Details */}
+                <div className="details-section">
+                  <h3 className="section-heading">Investment Details</h3>
+                  <div className="details-grid">
+                    <div className="detail-card">
+                      <div className="detail-icon">
+                        <DollarSign className="w-5 h-5" />
+                      </div>
+                      <div className="detail-content">
+                        <span className="detail-label">Minimum Investment</span>
+                        <span className="detail-value">{division.details.minInvestment}</span>
+                      </div>
                     </div>
-                    <h4>Investment Details</h4>
-                  </CardHeader>
-                  <CardBody>
-                    <div className="investment-details-grid">
-                      {Object.entries(division.details).map(([key, value]) => (
-                        <div key={key} className="detail-item">
-                          <div className="detail-label">
-                            {key
-                              .replace(/([A-Z])/g, " $1")
-                              .replace(/^./, (str) => str.toUpperCase())}
-                          </div>
-                          <div className={`detail-value ${key === 'targetReturns' ? 'returns' : ''}`}>
-                            {value}
-                          </div>
-                        </div>
-                      ))}
+                    <div className="detail-card">
+                      <div className="detail-icon">
+                        <Clock className="w-5 h-5" />
+                      </div>
+                      <div className="detail-content">
+                        <span className="detail-label">Minimum Duration</span>
+                        <span className="detail-value">{division.details.minDuration}</span>
+                      </div>
                     </div>
-                  </CardBody>
-                </Card>
+                    <div className="detail-card">
+                      <div className="detail-icon">
+                        <TrendingUp className="w-5 h-5" />
+                      </div>
+                      <div className="detail-content">
+                        <span className="detail-label">Target Returns</span>
+                        <span className="detail-value returns">{division.details.targetReturns}</span>
+                      </div>
+                    </div>
+                    <div className="detail-card">
+                      <div className="detail-icon">
+                        <BarChart3 className="w-5 h-5" />
+                      </div>
+                      <div className="detail-content">
+                        <span className="detail-label">Risk Profile</span>
+                        <span className="detail-value risk">{division.details.riskProfile}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-                {/* Key Features with Enhanced Visuals */}
-                <div className="features-container">
-                  <h4 className="container-title">
-                    <div className="title-icon-wrapper">
-                      <TrendingUp className="container-title-icon" />
-                    </div>
+                {/* Key Features */}
+                <div className="features-section">
+                  <h3 className="section-heading">
+                    <CheckCircle className="section-heading-icon" />
                     Key Features & Advantages
-                  </h4>
-                  <div className="features-grid">
+                  </h3>
+                  <div className="features-list">
                     {division.features.map((feature, idx) => (
                       <div key={idx} className="feature-item">
-                        <div className="feature-icon-container">
-                          <CheckCircle className="feature-icon" />
+                        <div className="feature-check">
+                          <CheckCircle className="w-4 h-4" />
                         </div>
                         <span className="feature-text">{feature}</span>
                       </div>
@@ -327,56 +333,50 @@ export default function Investments() {
                   </div>
                 </div>
 
-                {/* Capital Protection with Enhanced Design */}
-                <div className="protection-container">
-                  <h4 className="container-title">
-                    <div className="title-icon-wrapper">
-                      <Shield className="container-title-icon" />
-                    </div>
+                {/* Capital Protection */}
+                <div className="protection-section">
+                  <h3 className="section-heading">
+                    <Shield className="section-heading-icon" />
                     Capital Protection Measures
-                  </h4>
-                  <div className="protection-measures">
-                    <div className="protection-measures-list">
-                      {division.capitalProtection.map((measure, idx) => (
-                        <div key={idx} className="protection-measure-item">
-                          <div className="protection-measure-icon-container">
-                            <Shield className="protection-measure-icon" />
-                          </div>
-                          <span className="protection-measure-text">
-                            {measure}
-                          </span>
+                  </h3>
+                  <div className="protection-list">
+                    {division.capitalProtection.map((measure, idx) => (
+                      <div key={idx} className="protection-item">
+                        <div className="protection-icon">
+                          <Lock className="w-4 h-4" />
                         </div>
-                      ))}
-                    </div>
+                        <span className="protection-text">{measure}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
                 {/* Investment Structure */}
-                <div className="structure-container">
-                  <h4 className="container-title">
-                    <div className="title-icon-wrapper">
-                      <FileText className="container-title-icon" />
-                    </div>
+                <div className="structure-section">
+                  <h3 className="section-heading">
+                    <FileText className="section-heading-icon" />
                     Investment Structure
-                  </h4>
-                  <p className="structure-text">
-                    {division.investmentStructure}
-                  </p>
+                  </h3>
+                  <div className="structure-content">
+                    <p className="structure-text">{division.investmentStructure}</p>
+                    <div className="returns-info">
+                      <TrendingUp className="returns-icon" />
+                      <span className="returns-label">Returns may include: {division.returnsDescription}</span>
+                    </div>
+                  </div>
                 </div>
 
-                {/* CTA Buttons with Enhanced Styling */}
-                <div className="division-cta-buttons">
+                {/* CTA Buttons */}
+                <div className="division-cta">
                   <Link to="/express-interest">
                     <Button className="express-interest-btn">
-                      <span>Express Interest</span>
-                      <div className="button-icon-wrapper">
-                        <ArrowRight className="w-4 h-4" />
-                      </div>
+                      Express Interest
+                      <ArrowRight className="w-4 h-4" />
                     </Button>
                   </Link>
                   <Link to={`/investor-hub/${division.id}`}>
-                    <Button variant="outline" className="detailed-info-btn">
-                      <span>Detailed Information</span>
+                    <Button variant="outline" className="learn-more-btn">
+                      View Detailed Terms
                     </Button>
                   </Link>
                 </div>
@@ -386,74 +386,66 @@ export default function Investments() {
         </section>
       ))}
 
-      {/* Risk Disclaimer with Enhanced Design */}
+      {/* Risk Disclaimer */}
       <section className="risk-disclaimer-section">
         <div className="risk-disclaimer-content">
-          <div className="risk-disclaimer-flex">
-            <div className="risk-disclaimer-icon-container">
-              <AlertCircle className="risk-disclaimer-icon" />
-            </div>
-            <div className="risk-disclaimer-text-container">
-              <h5 className="risk-disclaimer-title">
-                Important Investment Disclaimer
-              </h5>
-              <p className="risk-disclaimer-text">
-                All investments carry risk, including the potential loss of
-                principal. Target returns are projections based on historical
-                performance and current market conditions and are not
-                guaranteed. Past performance is not indicative of future
-                results. The information provided does not constitute financial
-                advice. Investors should carefully review all offering documents
-                and consult with qualified financial, legal, and tax advisors
-                before making any investment decision. Investments are suitable
-                only for sophisticated investors who can afford to lose their
-                entire investment.
-              </p>
-            </div>
+          <div className="risk-disclaimer-header">
+            <AlertCircle className="risk-icon" />
+            <h3 className="risk-title">Important Investment Disclaimer</h3>
+          </div>
+          <div className="risk-disclaimer-body">
+            <p className="risk-text">
+              All investments carry risk, including the potential loss of principal. 
+              Target returns are projections based on historical performance and current 
+              market conditions and are not guaranteed. Past performance is not indicative 
+              of future results.
+            </p>
+            <p className="risk-text">
+              The information provided does not constitute financial, legal, or tax advice. 
+              Investors should carefully review all offering materials and consult qualified 
+              advisors before making any investment decision. Investment opportunities are 
+              suitable only for investors who can afford to bear the risk of loss.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* CTA Section with Enhanced Visuals */}
-      <section className="cta-section">
-        <div className="cta-pattern"></div>
-        <div className="cta-content">
+      {/* CTA Section */}
+      <section className="investments-cta-section">
+        <div className="investments-cta-content">
           <div className="cta-badge">
-            <Sparkles className="w-5 h-5" />
-            Exclusive Opportunities
+            <Sparkles className="cta-badge-icon" />
+            <span>Exclusive Opportunities</span>
           </div>
           <h2 className="cta-title">Ready to Diversify Your Portfolio?</h2>
           <p className="cta-subtitle">
-            Our investment team is ready to discuss how these opportunities
-            align with your financial objectives and risk tolerance. Express
-            your interest today for a confidential consultation.
+            Our investment team is available to discuss how these opportunities 
+            may align with your financial objectives and risk tolerance.
           </p>
           <div className="cta-buttons">
             <Link to="/express-interest">
-              <Button size="lg" className="cta-primary-btn">
-                <span>Express Interest</span>
-                <div className="button-icon-wrapper-lg">
-                  <ArrowRight className="w-5 h-5" />
-                </div>
+              <Button size="lg" className="primary-cta-btn">
+                Express Interest
+                <ArrowRight className="w-5 h-5" />
               </Button>
             </Link>
             <Link to="/contact">
-              <Button variant="outline" size="lg" className="contact-us-button">
+              <Button variant="outline" size="lg" className="secondary-cta-btn">
                 Schedule Consultation
               </Button>
             </Link>
           </div>
-          <div className="cta-footer">
-            <div className="cta-footer-item">
-              <Shield className="w-5 h-5" />
+          <div className="trust-signals">
+            <div className="trust-signal">
+              <Shield className="trust-icon" />
               <span>Confidential Process</span>
             </div>
-            <div className="cta-footer-item">
-              <Clock className="w-5 h-5" />
-              <span>24h Response Time</span>
+            <div className="trust-signal">
+              <Clock className="trust-icon" />
+              <span>24-Hour Response Time</span>
             </div>
-            <div className="cta-footer-item">
-              <FileText className="w-5 h-5" />
+            <div className="trust-signal">
+              <Award className="trust-icon" />
               <span>Comprehensive Due Diligence</span>
             </div>
           </div>

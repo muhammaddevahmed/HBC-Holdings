@@ -8,6 +8,13 @@ import {
   BarChart3,
   Users,
   Award,
+  Car,
+  Leaf,
+  Puzzle,
+  Clock,
+  FileText,
+  DollarSign,
+  Building,
 } from "lucide-react";
 import Layout from "../components/Layout";
 import Button from "../components/Button";
@@ -17,106 +24,142 @@ import "./Home.css";
 export default function Home() {
   const investmentArms = [
     {
-      title: "Luxury Automotive & Logistics",
+      title: "Mobility Investment Series",
       description:
-        "Strategic investments in high-value automotive assets and logistics infrastructure with tangible collateral backing.",
-      icon: "🚗",
+        "Strategic investments in high-value automotive assets and mobility-linked infrastructure, designed for stable income and capital protection.",
+      icon: <Car className="w-8 h-8" />,
       minInvestment: "$50,000",
-      returns: "12-18% annually",
+      minDuration: "24 months",
       link: "/investments#automotive",
+      color: "#1f4d2e",
     },
     {
-      title: "Sustainable & Emerging Markets",
+      title: "Sustainable & Eco-Investment Series",
       description:
-        "Growth-focused investments in renewable energy, green technology, and emerging market opportunities.",
-      icon: "🌱",
-      minInvestment: "$25,000",
-      returns: "15-22% annually",
-      link: "/investments#sustainable",
-    },
-    {
-      title: "Alternative Investments",
-      description:
-        "Diversified portfolio including precious metals, commodities, and non-traditional asset classes.",
-      icon: "💎",
+        "Revenue-generating investments focused on sustainable infrastructure and emerging market projects aligned with long-term environmental and economic value.",
+      icon: <Leaf className="w-8 h-8" />,
       minInvestment: "$100,000",
-      returns: "10-16% annually",
+      minDuration: "24 months",
+      link: "/investments#sustainable",
+      color: "#2e6b43",
+    },
+    {
+      title: "Alternative Investment Series",
+      description:
+        "Diversified non-traditional asset opportunities, including trade-backed transactions and secured structures.",
+      icon: <Puzzle className="w-8 h-8" />,
+      minInvestment: "$20,000",
+      minDuration: "24 months",
       link: "/investments#alternative",
+      color: "#c8a24d",
     },
   ];
 
   const capitalProtection = [
     {
-      icon: <Shield className="w-6 h-6" />,
+      icon: <Building className="w-6 h-6" />,
       title: "Asset-Backed Security",
       description:
-        "Every investment is secured by tangible, liquid assets with verified market value",
+        "Investments are secured by tangible or revenue-generating assets with verified market value.",
     },
     {
-      icon: <Lock className="w-6 h-6" />,
+      icon: <FileText className="w-6 h-6" />,
       title: "Structural Safeguards",
       description:
-        "Multi-layered protection mechanisms including escrow accounts and third-party custody",
+        "Clearly defined legal structures, settlement mechanisms, and exit protocols.",
     },
     {
       icon: <BarChart3 className="w-6 h-6" />,
       title: "Risk Diversification",
       description:
-        "Strategic allocation across asset classes and geographic markets to minimize concentration risk",
+        "Strategic allocation across asset classes, sectors, and regions to reduce concentration risk.",
     },
     {
-      icon: <Award className="w-6 h-6" />,
+      icon: <Clock className="w-6 h-6" />,
       title: "Transparent Reporting",
       description:
-        "Quarterly portfolio updates and annual audited financial statements for all investors",
+        "Consistent quarterly updates and performance insights for all investors.",
     },
   ];
 
   const trustSignals = [
-    { metric: "$250M+", label: "Assets Under Management" },
-    { metric: "500+", label: "Active Investors" },
-    { metric: "15+", label: "Years Combined Experience" },
-    { metric: "98%", label: "Investor Retention Rate" },
+    { metric: "$300M+", label: "Assets Under Management", icon: <DollarSign className="w-8 h-8" /> },
+    { metric: "500+", label: "Active Investors", icon: <Users className="w-8 h-8" /> },
+    { metric: "10+", label: "Years Combined Leadership Experience", icon: <Award className="w-8 h-8" /> },
+    { metric: "98%", label: "Investor Retention Rate", icon: <TrendingUp className="w-8 h-8" /> },
+  ];
+
+  const howItWorks = [
+    {
+      step: "1",
+      title: "Express Interest",
+      description: "Submit your initial inquiry through our secure portal",
+    },
+    {
+      step: "2",
+      title: "Qualification & Verification",
+      description: "Complete our investor qualification process",
+    },
+    {
+      step: "3",
+      title: "Capital Deployment",
+      description: "Funds are allocated to structured, asset-backed opportunities",
+    },
+    {
+      step: "4",
+      title: "Returns, Reporting & Oversight",
+      description: "Receive consistent returns with transparent quarterly reporting",
+    },
+  ];
+
+  const testimonials = [
+    {
+      quote: "From onboarding to reporting, everything felt structured and transparent. I appreciated the conservative approach and the fact that capital protection was clearly prioritized.",
+      author: "Amina K., Private Investor",
+      series: "Mobility Series | 3+ Years",
+    },
+    {
+      quote: "HBG doesn't overpromise. The team focuses on execution, asset quality, and communication — which is exactly what I look for in alternative investments.",
+      author: "Thomas R., Portfolio Consultant",
+      series: "Multi-Division Portfolio | 4+ Years",
+    },
+    {
+      quote: "What stood out for me was the discipline. Reporting is clear, and expectations are realistic.",
+      author: "Samuel D., Business Owner",
+      series: "Alternative Investments | 2+ Years",
+    },
   ];
 
   return (
     <Layout activePage="#home">
       {/* Hero Section */}
       <section className="home-hero-section">
-        <div className="home-hero-background-image">
-          <img
-            src="https://images.unsplash.com/photo-1634474588578-7f0565a1cea5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBpbnZlc3RtZW50JTIwZmluYW5jZXxlbnwxfHx8fDE3NjU4MDk5NzZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-            alt="Corporate Investment"
-          />
-        </div>
         <div className="home-hero-content">
           <div className="home-hero-text-container">
             <div className="hero-badge">
               <CheckCircle className="hero-badge-icon" />
               <span className="hero-badge-text">
-                Regulated & Asset-Backed Investments
+                Structured & Asset-Backed Investments
               </span>
             </div>
             <h1 className="home-hero-title">
-              Asset-Backed. Secure. <br /> 
-             <p className="small-heading">Structured Investments</p> 
-              
+              Smart Capital Meets <span className="highlight-text">Real Assets</span>
             </h1>
             <p className="home-hero-description">
-              HBC Holdings provides institutional-grade investment opportunities
-              backed by tangible assets, combining capital preservation with
-              attractive returns for qualified investors.
+              HBG offers carefully structured, asset-backed investment opportunities 
+              designed to protect capital while delivering consistent, long-term returns 
+              for qualified investors.
             </p>
             <div className="home-hero-buttons">
               <Link to="/investments">
-                <Button size="lg">
+                <Button size="lg" style={{ backgroundColor: '#1f4d2e' }}>
                   View Investment Options
                   <ArrowRight className="w-5 h-5" />
                 </Button>
               </Link>
-              <Link to="/express-interest">
-                <Button variant="outline" size="lg">
-                  Express Interest
+              <Link to="/about">
+                <Button variant="outline" size="lg" style={{ borderColor: '#1f4d2e', color: '#1f4d2e' }}>
+                  Learn More
                 </Button>
               </Link>
             </div>
@@ -129,7 +172,10 @@ export default function Home() {
         <div className="trust-signals-content">
           <div className="trust-signals-grid">
             {trustSignals.map((item, index) => (
-              <div key={index}>
+              <div key={index} className="trust-signal">
+                <div className="trust-signal-icon" style={{ color: '#1f4d2e' }}>
+                  {item.icon}
+                </div>
                 <p className="trust-signal-metric">{item.metric}</p>
                 <p className="trust-signal-label">{item.label}</p>
               </div>
@@ -138,75 +184,87 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Preview Section */}
-      <section className="about-preview-section">
-        <div className="about-preview-content">
-          <div>
-            <h2 className="about-preview-title">
-              A Foundation of Trust & Expertise
+      {/* Foundation Statement */}
+      <section className="foundation-section">
+        <div className="foundation-content">
+          <div className="foundation-text">
+            <h2 className="foundation-title">
+              A Foundation Built on Structure, Discipline, and Trust
             </h2>
-            <p className="about-preview-text">
-              HBC Holdings was founded by a consortium of seasoned financial
-              analysts, portfolio managers, and industry veterans. Our
-              leadership team brings over 50 years of combined experience from
-              top-tier global financial institutions. We are dedicated to
-              democratizing access to secure, high-yield investment
-              opportunities that were once reserved for institutional players.
-            </p>
-            <p className="about-preview-text-final">
-              Our investment philosophy is rooted in rigorous due diligence,
-              transparent operations, and a steadfast commitment to capital
-              preservation.
-            </p>
-            <div className="about-preview-button-container">
+            <div className="foundation-paragraphs">
+              <p className="foundation-text-para">
+                HBG was established to bridge the gap between institutional-grade investment 
+                strategies and qualified private investors. Our leadership brings deep experience 
+                across asset-backed investing, risk management, and alternative markets.
+              </p>
+              <p className="foundation-text-para">
+                We prioritize disciplined capital deployment, rigorous due diligence, and 
+                transparent reporting—ensuring every investment is supported by real assets, 
+                clear structures, and defined risk frameworks.
+              </p>
+            </div>
+            <div className="foundation-button">
               <Link to="/about">
-                <Button>
-                  Learn More About Us
+                <Button style={{ backgroundColor: '#1f4d2e' }}>
+                  Learn more about HBC
                   <ArrowRight className="w-5 h-5" />
                 </Button>
               </Link>
             </div>
           </div>
-          <div className="about-preview-image-container">
-            <img
-              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjB0ZWFtfGVufDF8fHx8MTc2NTgwOTk5MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-              alt="HBC Holdings Team"
-              className="about-preview-image"
-            />
+          <div className="foundation-image">
+            <div className="foundation-image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHJ1Y3R1cmVkJTIwZmluYW5jaWFsJTIwbW9kZWx8ZW58MXx8fHwxNzY1ODM3OTY5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                alt="Structured Financial Model"
+                className="foundation-image-content"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Investment Arms Section */}
-      <section className="investment-arms-section">
-        <div className="investment-arms-content">
-          <div className="investment-arms-header">
-            <h2 className="investment-arms-title">Our Investment Arms</h2>
-            <p className="investment-arms-subtitle">
-              We focus on distinct, high-growth sectors where our expertise and
-              strategic approach can generate maximum value while ensuring
-              robust capital protection.
+      {/* Investment Divisions */}
+      <section className="investment-divisions-section">
+        <div className="investment-divisions-content">
+          <div className="investment-divisions-header">
+            <h2 className="investment-divisions-title">Investment Divisions</h2>
+            <p className="investment-divisions-subtitle">
+              Strategic opportunities across carefully selected sectors
             </p>
           </div>
-          <div className="investment-arms-grid">
-            {investmentArms.map((arm, index) => (
-              <Card key={index} className="investment-arm-card">
-                <CardBody className="investment-arm-card-body">
-                  <div className="investment-arm-icon">{arm.icon}</div>
-                  <h3 className="investment-arm-title">{arm.title}</h3>
-                  <p className="investment-arm-description">
-                    {arm.description}
-                  </p>
-                  <div className="investment-arm-details">
-                    <p>
-                      <strong>Minimum Investment:</strong> {arm.minInvestment}
-                    </p>
-                    <p>
-                      <strong>Targeted Returns:</strong> {arm.returns}
-                    </p>
+          <div className="investment-divisions-grid">
+            {investmentArms.map((division, index) => (
+              <Card key={index} className="investment-division-card">
+                <CardBody className="investment-division-card-body">
+                  <div 
+                    className="investment-division-icon"
+                    style={{ backgroundColor: `${division.color}20` }}
+                  >
+                    <div style={{ color: division.color }}>
+                      {division.icon}
+                    </div>
                   </div>
-                  <Link to={arm.link}>
-                    <Button variant="outline" className="learn-more-button">
+                  <h3 className="investment-division-title">{division.title}</h3>
+                  <p className="investment-division-description">
+                    {division.description}
+                  </p>
+                  <div className="investment-division-details">
+                    <div className="investment-detail">
+                      <span className="detail-label">Minimum Investment:</span>
+                      <span className="detail-value">{division.minInvestment}</span>
+                    </div>
+                    <div className="investment-detail">
+                      <span className="detail-label">Minimum Duration:</span>
+                      <span className="detail-value">{division.minDuration}</span>
+                    </div>
+                  </div>
+                  <Link to={division.link} target="_blank">
+                    <Button 
+                      variant="outline" 
+                      className="learn-more-button"
+                      style={{ borderColor: division.color, color: division.color }}
+                    >
                       Learn More
                       <ArrowRight className="w-4 h-4" />
                     </Button>
@@ -218,16 +276,43 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Capital Protection Section */}
+      {/* How It Works */}
+      <section className="how-it-works-section">
+        <div className="how-it-works-content">
+          <h2 className="how-it-works-title">How It Works</h2>
+          <p className="how-it-works-subtitle">
+            A structured process designed for clarity and security
+          </p>
+          <div className="how-it-works-steps">
+            {howItWorks.map((step, index) => (
+              <div key={index} className="step-card">
+                <div className="step-number">{step.step}</div>
+                <h3 className="step-title">{step.title}</h3>
+                <p className="step-description">{step.description}</p>
+              </div>
+            ))}
+          </div>
+          <div className="how-it-works-button">
+            <Link to="/express-interest" >
+              <Button size="lg" style={{ backgroundColor: '#1f4d2e' }}>
+                Start Investing
+                <ArrowRight className="w-5 h-5" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Capital Protection */}
       <section className="capital-protection-section">
         <div className="capital-protection-content">
           <div className="capital-protection-header">
             <h2 className="capital-protection-title">
-              Unwavering Commitment to Capital Protection
+              Your Capital Comes First
             </h2>
             <p className="capital-protection-subtitle">
-              Our primary mandate is the preservation of your capital. We employ
-              a multi-layered security framework to safeguard every investment.
+              Preserving investor capital is central to HBG's philosophy. Each investment 
+              incorporates layered protection frameworks designed to manage downside risk.
             </p>
           </div>
           <div className="capital-protection-grid">
@@ -244,8 +329,8 @@ export default function Home() {
             ))}
           </div>
           <div className="capital-protection-button-container">
-            <Link to="/investor-hub">
-              <Button size="lg">
+            <Link to="/protection-framework" >
+              <Button size="lg" style={{ backgroundColor: '#1f4d2e' }}>
                 View Complete Protection Framework
                 <ArrowRight className="w-5 h-5" />
               </Button>
@@ -254,34 +339,55 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <section className="testimonials-section">
+        <div className="testimonials-content">
+          <h2 className="testimonials-title">Investor Experiences</h2>
+          <p className="testimonials-subtitle" >
+            What our investors say about working with HBC
+          </p>
+          <div className="testimonials-grid">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="testimonial-card">
+                <CardBody className="testimonial-card-body">
+                  <div className="testimonial-quote">"{testimonial.quote}"</div>
+                  <div className="testimonial-author">{testimonial.author}</div>
+                  <div className="testimonial-series">{testimonial.series}</div>
+                </CardBody>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section className="cta-section">
+      <section style={{background:"#2e6b43"}} className="cta-section">
         <div className="cta-content">
           <Users className="cta-icon" />
           <h2 className="cta-title">
-            Become a Qualified Investor with HBC Holdings
+            Become a Qualified Investor with HBC
           </h2>
-          <p className="cta-subtitle">
-            Join a select group of investors benefiting from
-            institutional-grade, asset-backed opportunities. Begin your journey
-            towards secure and structured wealth growth today.
+          <p className="cta-subtitle" style={{color:"whitesmoke"}}>
+            Join a select group of investors accessing structured, asset-backed opportunities 
+            designed for long-term stability and growth.
           </p>
           <div className="cta-buttons">
-            <Link to="/express-interest">
+            <Link to="/express-interest" >
               <Button
-                variant="outline"
                 size="lg"
+                style={{ backgroundColor: '#ffffff', color: '#1f4d2e' }}
                 className="express-interest-button-cta"
               >
                 Express Interest
                 <ArrowRight className="w-5 h-5" />
               </Button>
             </Link>
-            <Link to="/contact">
+            <Link to="/contact" >
               <Button
                 variant="outline"
                 size="lg"
                 className="contact-us-button-cta"
+                style={{ borderColor: '#ffffff', color: '#ffffff' }}
               >
                 Contact Our Team
               </Button>

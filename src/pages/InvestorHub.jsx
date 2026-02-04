@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   FileText,
   ShieldCheck,
@@ -7,322 +8,368 @@ import {
   BarChart3,
   Download,
   AlertCircle,
+  ArrowRight,
+  ChevronDown,
+  ChevronUp,
+  Mail,
+  Phone,
+  Building,
+  Users,
+  Clock,
+  CheckCircle,
+  Target,
+  Globe
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import Layout from "../components/Layout";
 import Card, { CardBody, CardHeader } from "../components/Card";
+import Button from "../components/Button";
 import "./InvestorHub.css";
 
 export default function InvestorHub() {
+  const [openFAQ, setOpenFAQ] = useState(null);
+
+  const toggleFAQ = (index) => {
+    setOpenFAQ(openFAQ === index ? null : index);
+  };
+
   const onboardingSteps = [
     {
       step: 1,
       title: "Initial Inquiry",
-      description:
-        "Submit your expression of interest through our secure form. Our team will contact you within 48 hours to discuss your investment objectives.",
-      duration: "1-2 days",
+      description: "Submit your expression of interest through our secure form. A member of our investment team will contact you within 24 hours to understand your objectives and confirm next steps.",
+      duration: "1–2 business days"
     },
     {
       step: 2,
       title: "Qualification Assessment",
-      description:
-        "We verify investor accreditation status and ensure alignment between investment goals and available opportunities.",
-      duration: "2-3 days",
+      description: "We assess investor eligibility, accreditation status, and alignment between your investment goals and available opportunities.",
+      duration: "12–24 hours"
     },
     {
       step: 3,
       title: "Due Diligence Review",
-      description:
-        "Receive comprehensive investment materials including offering memoranda, legal documents, and detailed risk disclosures.",
-      duration: "5-7 days",
+      description: "You receive comprehensive investment materials, including Investor Information Kit, investment overview documents, structure and deployment framework, risk considerations, expected timelines and reporting, and legal terms and risk disclosures.",
+      duration: "1–2 business days"
     },
     {
       step: 4,
-      title: "KYC/AML Compliance",
-      description:
-        "Complete know-your-customer verification through our secure portal, including identity verification and source of funds documentation.",
-      duration: "3-5 days",
+      title: "KYC / AML Compliance",
+      description: "Complete Know-Your-Customer and Anti-Money Laundering verification documents via secure channel, including identity and source-of-funds documentation.",
+      duration: "1–3 business days"
     },
     {
       step: 5,
       title: "Agreement Execution",
-      description:
-        "Review and sign subscription agreements, investor disclosures, and related documentation electronically.",
-      duration: "2-3 days",
+      description: "Review and electronically execute all required documentation, including subscription agreements and investor disclosures.",
+      duration: "2–3 business days"
     },
     {
       step: 6,
       title: "Capital Deployment",
-      description:
-        "Transfer investment capital to designated escrow account. Funds are deployed only after all conditions precedent are satisfied.",
-      duration: "3-5 days",
+      description: "Investment capital is transferred to designated HBC account. Funds are deployed only after all contractual and compliance conditions are satisfied.",
+      duration: "3–5 business days"
     },
     {
       step: 7,
-      title: "Investor Portal Access",
-      description:
-        "Receive credentials for our investor portal with real-time portfolio access, reporting, and documentation.",
-      duration: "Immediate",
-    },
+      title: "Activation & Confirmation",
+      description: "Investors receive official welcome confirmation, fully executed investment documentation, post-dated cheques (where applicable), and access to reporting and communication channels.",
+      duration: "Within activation period"
+    }
   ];
 
   const protectionLayers = [
     {
       title: "Layer 1: Asset Backing",
-      description:
-        "All investments secured by physical, tangible assets with independently verified market value",
+      description: "Supported by revenue-generating assets with independently assessed market value.",
       features: [
-        "Third-party appraisals",
-        "Regular revaluation",
-        "Conservative loan-to-value ratios",
-        "Physical custody",
-      ],
+        "Tangible asset exposure",
+        "Regular monitoring and valuation",
+        "Defined asset documentation"
+      ]
     },
     {
       title: "Layer 2: Legal Structure",
-      description:
-        "Bankruptcy-remote special purpose vehicles with clear creditor priority",
+      description: "Each investment is governed by documented agreements defining terms, lock-in periods, exit and settlement procedures, and capital recovery mechanisms.",
       features: [
-        "SPV isolation",
-        "Registered security interests",
-        "Investor priority waterfall",
-        "Independent directors",
-      ],
+        "Post-dated cheques may be issued where applicable",
+        "Structured settlement frameworks",
+        "Clear contractual terms"
+      ]
     },
     {
       title: "Layer 3: Insurance & Custody",
-      description:
-        "Comprehensive insurance coverage and third-party custody arrangements",
+      description: "Certain asset classes may include additional protection measures.",
       features: [
-        "All-risk insurance",
-        "Established custodians",
+        "Asset-level insurance coverage",
         "Segregated accounts",
-        "Regular audits",
-      ],
+        "Third-party custodial arrangements"
+      ]
     },
     {
       title: "Layer 4: Risk Management",
-      description:
-        "Active monitoring and risk mitigation throughout investment lifecycle",
+      description: "Continuous monitoring and proactive risk mitigation throughout investment lifecycle.",
       features: [
-        "Continuous monitoring",
         "Diversification requirements",
-        "Stress testing",
-        "Early warning systems",
-      ],
-    },
-  ];
-
-  const resources = [
-    { name: "Investment Overview Brochure", type: "PDF", size: "2.4 MB" },
-    { name: "Capital Protection Framework", type: "PDF", size: "1.8 MB" },
-    { name: "Investor Agreement Template", type: "PDF", size: "3.1 MB" },
-    { name: "Risk Disclosure Statement", type: "PDF", size: "1.2 MB" },
-    { name: "Fee Structure Guide", type: "PDF", size: "856 KB" },
-    { name: "Tax Reporting Guidelines", type: "PDF", size: "1.5 MB" },
+        "Stress testing and scenario analysis",
+        "Early risk identification mechanisms",
+        "Transparent tracking and reporting"
+      ]
+    }
   ];
 
   const investorFAQs = [
     {
       question: "What is the minimum investment amount?",
-      answer:
-        "Minimums vary by division: $25,000 for Sustainable Markets, $50,000 for Luxury Automotive, and $100,000 for Alternative Investments.",
+      answer: "Minimum investment thresholds vary by division: Mobility Series: USD 50,000, Sustainable & Emerging Markets: USD 100,000, Alternative Investment Series: USD 20,000."
     },
     {
-      question: "How do I access the investor portal?",
-      answer:
-        "Credentials are provided securely via email upon completion of the onboarding and capital deployment process.",
-    },
-    {
-      question: "When are returns distributed?",
-      answer:
-        "Distributions follow the specific schedule of each investment vehicle, typically quarterly or semi-annually, and are accessible via the portal.",
+      question: "Who can invest with HBC?",
+      answer: "Investment opportunities are available only to approved investors following internal screening, compliance review, and acceptance."
     },
     {
       question: "Is my capital locked up?",
-      answer:
-        "Yes, investments typically have a lock-up period (e.g., 12-36 months) to ensure strategy execution. Liquidity events are detailed in the offering documents.",
+      answer: "Yes. Most HBC programs include a defined lock-in period, typically 18 months, to support proper execution of investment strategies."
     },
+    {
+      question: "Is HBC a savings or deposit scheme?",
+      answer: "No. HBC operates structured private investment programs with defined terms, risk exposure, and asset backing. These are not savings products."
+    },
+    {
+      question: "What type of investors does HBC work with?",
+      answer: "We work with a range of qualified investors, including standard private investors, strategic investors, and institutional and family office participants. Participation depends on capital allocation, experience, and compliance review."
+    },
+    {
+      question: "How are returns distributed?",
+      answer: "Returns are distributed according to the specific schedule outlined in each investment's documentation, typically through structured settlement mechanisms."
+    }
+  ];
+
+  const resources = [
+    { 
+      name: "Investment Information Kit", 
+      type: "PDF", 
+      size: "2.1 MB",
+      description: "Comprehensive overview of HBC's investment approach and programs"
+    },
+    { 
+      name: "Investor Onboarding Guide", 
+      type: "PDF", 
+      size: "1.8 MB",
+      description: "Step-by-step guide to the investor qualification process"
+    },
+    { 
+      name: "Capital Protection Overview", 
+      type: "PDF", 
+      size: "1.5 MB",
+      description: "Detailed explanation of our multi-layered protection framework"
+    },
+    
+  ];
+
+  const investorTypes = [
+    {
+      type: "Standard Private Investors",
+      description: "Qualified individuals seeking structured, asset-backed opportunities"
+    },
+    {
+      type: "Strategic Investors",
+      description: "Partners with specific sector expertise or strategic alignment"
+    },
+    {
+      type: "Institutional & Family Offices",
+      description: "Professional investors requiring sophisticated investment structures"
+    }
   ];
 
   return (
     <Layout activePage="/investor-hub">
       {/* Hero Section */}
       <section className="investor-hub-hero-section">
-        <div className="investor-hub-hero-content">
-          <div className="investor-hub-hero-text-container">
-            <h1 className="investor-hub-hero-title">
-              Investor{" "}
-              <span className="investor-hub-hero-title-highlight1">
-                Information Hub
-              </span>
+        <div className="hero-pattern"></div>
+        <div className="investor-hub-content">
+          <div className="investor-hub-header">
+            <div className="header-badge">
+              <Building className="badge-icon" />
+              <span>Educational Resources</span>
+            </div>
+            <h1 className="hero-title">
+              Investor <span className="highlight">Resources</span>
             </h1>
-            <p className="investor-hub-hero-description">
-              Everything you need to understand our investment process, capital
-              protection framework, and investor onboarding procedures.
+            <p className="hero-description">
+              Everything you need to understand how we invest. At HBC, we believe informed investors 
+              make better long-term decisions. Our Investor Resources section is designed to clearly 
+              explain our investment process, capital protection philosophy, and onboarding requirements.
             </p>
+            <div className="disclaimer-box" >
+              <AlertCircle className="disclaimer-icon" style={{color:"whitesmoke"}} />
+              <p className="disclaimer-text" style={{color:"whitesmoke"}}>
+                This section is educational in nature and intended to help qualified investors understand 
+                how HBC structures and manages its investment programs. It is not a legal document and 
+                should not be relied upon as the sole basis for an investment decision.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Quick Links */}
-      <section className="quick-links-section">
-        <div className="quick-links-content">
-          <div className="quick-links-grid">
-            <a href="#onboarding" className="quick-link">
-              <UserCheck className="quick-link-icon" />
-              <span className="quick-link-text">Onboarding Process</span>
+      {/* Navigation Section */}
+      <section className="navigation-section">
+        <div className="navigation-content">
+          <h3 className="navigation-title">Investor Hub</h3>
+          <p className="navigation-subtitle">Click to navigate to specific sections</p>
+          <div className="navigation-grid">
+            <a href="#onboarding" className="nav-card">
+              <UserCheck className="nav-icon" />
+              <span className="nav-text">Investor Onboarding Process</span>
             </a>
-            <a href="#protection" className="quick-link">
-              <ShieldCheck className="quick-link-icon" />
-              <span className="quick-link-text">Capital Protection</span>
+            <a href="#protection" className="nav-card">
+              <ShieldCheck className="nav-icon" />
+              <span className="nav-text">Capital Protection Framework</span>
             </a>
-            <a href="#faq" className="quick-link">
-              <HelpCircle className="quick-link-icon" />
-              <span className="quick-link-text">FAQ</span>
+            <a href="#faq" className="nav-card">
+              <HelpCircle className="nav-icon" />
+              <span className="nav-text">Frequently Asked Questions</span>
             </a>
-            <a href="#privacy" className="quick-link">
-              <Lock className="quick-link-icon" />
-              <span className="quick-link-text">Privacy & Legal</span>
+            <a href="#resources" className="nav-card">
+              <FileText className="nav-icon" />
+              <span className="nav-text">Investor Resources</span>
+            </a>
+            <a href="/legal-compliance" className="nav-card">
+              <Lock className="nav-icon" />
+              <span className="nav-text">Privacy & Legal</span>
             </a>
           </div>
         </div>
       </section>
 
       {/* Onboarding Process */}
-      <section id="onboarding" className="onboarding-process-section">
-        <div className="onboarding-process-content">
-          <div className="onboarding-process-header">
-            <h2 className="onboarding-process-title">
-              Investor{" "}
-              <span className="onboarding-process-title-highlight">
-                Onboarding Process
-              </span>
+      <section id="onboarding" className="onboarding-section">
+        <div className="onboarding-content">
+          <div className="section-header">
+            <h2 className="section-title">
+              Investor <span className="accent">Onboarding Process</span>
             </h2>
-            <p className="onboarding-process-subtitle">
-              Our streamlined 7-step process ensures compliance, transparency,
-              and investor protection from initial inquiry to capital
-              deployment.
+            <p className="section-subtitle">
+              A structured, transparent path to investing with HBC. We follow a disciplined onboarding 
+              process designed to ensure compliance, investor suitability, and clarity at every stage.
             </p>
           </div>
 
-          <div className="onboarding-steps-grid">
-            {onboardingSteps.map((item) => (
-              <Card key={item.step} hover>
-                <CardBody className="onboarding-step-card-body">
-                  <div className="step-number-container">
-                    <span className="step-number">{item.step}</span>
-                  </div>
+          <div className="steps-container">
+            {onboardingSteps.map((step, index) => (
+              <Card key={index} className="step-card">
+                <CardBody>
                   <div className="step-content">
                     <div className="step-header">
-                      <h4>{item.title}</h4>
-                      <span className="step-duration">
-                        Timeline: {item.duration}
-                      </span>
-                    </div>
-                    <p className="step-description">{item.description}</p>
-                  </div>
-                </CardBody>
-              </Card>
-            ))}
-          </div>
-
-          <div className="timeline-note">
-            <div className="timeline-note-flex">
-              <AlertCircle className="timeline-note-icon" />
-              <div>
-                <h5 className="timeline-note-title">
-                  Total Onboarding Timeline
-                </h5>
-                <p className="timeline-note-text">
-                  The complete onboarding process typically takes 3-4 weeks from
-                  initial inquiry to capital deployment. This timeline may vary
-                  based on document availability and individual circumstances.
-                  Our team is committed to making the process as efficient as
-                  possible while maintaining compliance standards.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Capital Protection Layers */}
-      <section id="protection" className="protection-layers-section">
-        <div className="protection-layers-content">
-          <div className="protection-layers-header">
-            <h2 className="protection-layers-title">
-              Capital Protection{" "}
-              <span className="protection-layers-title-highlight">
-                Framework
-              </span>
-            </h2>
-            <p className="protection-layers-subtitle">
-              Four independent layers of protection work together to safeguard
-              investor capital and minimize risk.
-            </p>
-          </div>
-
-          <div className="protection-layers-grid">
-            {protectionLayers.map((layer, index) => (
-              <Card key={index} className="protection-layer-card">
-                <CardHeader>
-                  <h4>{layer.title}</h4>
-                  <p className="layer-description">{layer.description}</p>
-                </CardHeader>
-                <CardBody>
-                  <div className="layer-features">
-                    {layer.features.map((feature, idx) => (
-                      <div key={idx} className="layer-feature-item">
-                        <ShieldCheck className="layer-feature-icon" />
-                        <span className="layer-feature-text">{feature}</span>
+                      <div className="step-number">{step.step}</div>
+                      <div className="step-duration">
+                        <Clock className="duration-icon" />
+                        <span>Timeline: {step.duration}</span>
                       </div>
-                    ))}
+                    </div>
+                    <h3 className="step-title">{step.title}</h3>
+                    <p className="step-description">{step.description}</p>
                   </div>
                 </CardBody>
               </Card>
             ))}
           </div>
+
+          <div className="timeline-summary">
+            <Card className="summary-card">
+              <CardBody>
+                <div className="summary-content">
+                  <Target className="summary-icon" />
+                  <div>
+                    <h4 className="summary-title">Total Activation Timeline</h4>
+                    <p className="summary-text">
+                      3–10 business days (depending on document readiness and individual circumstances).
+                    </p>
+                    <div className="summary-note">
+                      Our team is committed to making the process as efficient as possible while 
+                      maintaining compliance standards.
+                    </div>
+                  </div>
+                </div>
+              </CardBody>
+            </Card>
+          </div>
         </div>
       </section>
 
-      {/* Resources */}
-      <section className="resources-section">
-        <div className="resources-content">
-          <div className="resources-header">
-            <h2 className="resources-title">
-              Investor{" "}
-              <span className="resources-title-highlight">Resources</span>
+      {/* Capital Protection Framework */}
+      <section id="protection" className="protection-section">
+        <div className="protection-content">
+          <div className="section-header">
+            <h2 className="section-title">
+              Capital Protection <span className="accent">Framework</span>
             </h2>
-            <p className="resources-subtitle">
-              Download comprehensive guides and documentation to understand our
-              investment approach and processes.
+            <p className="section-subtitle">
+              Designed to preserve capital first. HBC employs a layered capital protection approach 
+              intended to mitigate downside risk and enhance capital discipline. While no investment 
+              is risk-free, our structures are designed with preservation as a core priority.
             </p>
           </div>
 
-          <div className="resources-grid">
-            {resources.map((resource, index) => (
-              <Card key={index} hover>
-                <CardBody className="resource-card-body">
-                  <div className="resource-icon-container">
-                    <FileText className="resource-icon" />
-                  </div>
-                  <div className="resource-details">
-                    <h5 className="resource-name">{resource.name}</h5>
-                    <div className="resource-meta">
-                      <span>{resource.type}</span>
-                      <span>•</span>
-                      <span>{resource.size}</span>
+          <div className="protection-grid">
+            {protectionLayers.map((layer, index) => (
+              <Card key={index} className="layer-card">
+                <CardBody>
+                  <div className="layer-content">
+                    <div className="layer-header">
+                      <div className="layer-number">Layer {index + 1}</div>
+                      <h3 className="layer-title">{layer.title}</h3>
                     </div>
-                    <a
-                      href={`/assets/docs/${resource.name
-                        .toLowerCase()
-                        .replace(/ /g, "-")}.pdf`}
-                      download
-                      className="download-button"
-                    >
-                      <Download className="download-icon" />
-                      <span className="download-text">Download</span>
-                    </a>
+                    <p className="layer-description">{layer.description}</p>
+                    <div className="layer-features">
+                      {layer.features.map((feature, idx) => (
+                        <div key={idx} className="feature-item">
+                          <CheckCircle className="feature-icon" />
+                          <span className="feature-text">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </CardBody>
+              </Card>
+            ))}
+          </div>
+
+          <div className="protection-footer">
+            <Link to="/legal-compliance">
+              <Button variant="outline" className="legal-link-btn">
+                View Full Risk Disclosure
+                <ArrowRight className="btn-icon" />
+              </Button>
+            </Link>
+            <p className="protection-note">
+              For full legal disclosures and risk statements, please review the complete documentation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Investor Types */}
+      <section className="investor-types-section">
+        <div className="investor-types-content">
+          <div className="section-header">
+            <h2 className="section-title">
+              Who We <span className="accent">Work With</span>
+            </h2>
+            <p className="section-subtitle">
+              HBC partners with a diverse range of qualified investors
+            </p>
+          </div>
+
+          <div className="investor-types-grid">
+            {investorTypes.map((type, index) => (
+              <Card key={index} className="investor-type-card">
+                <CardBody>
+                  <div className="type-content">
+                    <Users className="type-icon" />
+                    <h3 className="type-title">{type.type}</h3>
+                    <p className="type-description">{type.description}</p>
                   </div>
                 </CardBody>
               </Card>
@@ -332,29 +379,37 @@ export default function InvestorHub() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="protection-layers-section">
-        <div className="protection-layers-content">
-          <div className="protection-layers-header">
-            <h2 className="protection-layers-title">
-              Frequently Asked{" "}
-              <span className="protection-layers-title-highlight">
-                Questions
-              </span>
+      <section id="faq" className="faq-section">
+        <div className="faq-content">
+          <div className="section-header">
+            <h2 className="section-title">
+              Frequently Asked <span className="accent">Questions</span>
             </h2>
-            <p className="protection-layers-subtitle">
-              Common questions regarding our investment platform and investor
-              services.
+            <p className="section-subtitle">
+              Common questions about investing with HBC
             </p>
           </div>
 
-          <div className="protection-layers-grid">
+          <div className="faq-container">
             {investorFAQs.map((faq, index) => (
-              <Card key={index} className="protection-layer-card">
-                <CardHeader>
-                  <h4>{faq.question}</h4>
-                </CardHeader>
+              <Card key={index} className="faq-card">
                 <CardBody>
-                  <p>{faq.answer}</p>
+                  <div 
+                    className="faq-question" 
+                    onClick={() => toggleFAQ(index)}
+                  >
+                    <h3 className="faq-question-text">{faq.question}</h3>
+                    {openFAQ === index ? (
+                      <ChevronUp className="chevron-icon" />
+                    ) : (
+                      <ChevronDown className="chevron-icon" />
+                    )}
+                  </div>
+                  {openFAQ === index && (
+                    <div className="faq-answer">
+                      <p className="faq-answer-text">{faq.answer}</p>
+                    </div>
+                  )}
                 </CardBody>
               </Card>
             ))}
@@ -362,145 +417,83 @@ export default function InvestorHub() {
         </div>
       </section>
 
-      {/* Privacy & Legal */}
-      <section id="privacy" className="privacy-legal-section">
-        <div className="privacy-legal-content">
-          <div className="privacy-legal-inner">
-            <h2 className="privacy-legal-header">
-              Privacy &{" "}
-              <span className="privacy-legal-title-highlight">
-                Legal Information
-              </span>
+      {/* Resources Section */}
+      <section id="resources" className="resources-section">
+        <div className="resources-content">
+          <div className="section-header">
+            <h2 className="section-title">
+              Investor <span className="accent">Resources</span>
             </h2>
+            <p className="section-subtitle">
+              Access informational guides designed to explain HBC's investment approach and operational processes. 
+              These materials are for reference only and should be read alongside formal legal disclosures.
+            </p>
+          </div>
 
-            <div className="privacy-legal-cards">
-              <Card>
-                <CardHeader className="privacy-legal-card-header">
-                  <Lock className="privacy-legal-card-icon" />
-                  <h4>Data Privacy Policy</h4>
-                </CardHeader>
-                <CardBody className="privacy-legal-card-body">
-                  <p className="policy-description">
-                    HBC Holdings is committed to protecting the privacy and
-                    confidentiality of investor information. We collect only the
-                    information necessary for investment processing, regulatory
-                    compliance, and investor communication.
-                  </p>
-                  <div className="space-y-3">
-                    <div>
-                      <h6 className="policy-point-title">
-                        Information We Collect
-                      </h6>
-                      <p className="policy-point-text">
-                        Personal identification, financial information,
-                        investment objectives, accreditation status, and
-                        transaction history as required for KYC/AML compliance
-                        and investment management.
-                      </p>
+          <div className="resources-grid">
+            {resources.map((resource, index) => (
+              <Card key={index} className="resource-card">
+                <CardBody>
+                  <div className="resource-content">
+                    <div className="resource-header">
+                      <FileText className="resource-icon" />
+                      <div className="resource-meta">
+                        <span className="resource-type">{resource.type}</span>
+                        <span className="resource-size">{resource.size}</span>
+                      </div>
                     </div>
-                    <div>
-                      <h6 className="policy-point-title">
-                        How We Use Your Information
-                      </h6>
-                      <p className="policy-point-text">
-                        Processing investments, regulatory reporting, investor
-                        communications, portfolio management, and compliance
-                        with legal obligations.
-                      </p>
-                    </div>
-                    <div>
-                      <h6 className="policy-point-title">Data Protection</h6>
-                      <p className="policy-point-text">
-                        Industry-standard encryption, secure data storage,
-                        restricted access controls, and regular security audits
-                        protect all investor information.
-                      </p>
-                    </div>
+                    <h3 className="resource-title">{resource.name}</h3>
+                    <p className="resource-description">{resource.description}</p>
+                    <a 
+                      href={`/documents/${resource.name.toLowerCase().replace(/ /g, '-')}.pdf`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="download-link"
+                    >
+                      <Download className="download-icon" />
+                      Download PDF
+                    </a>
                   </div>
                 </CardBody>
               </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              <Card id="legal">
-                <CardHeader className="privacy-legal-card-header">
-                  <FileText className="privacy-legal-card-icon" />
-                  <h4>Legal Disclaimers</h4>
-                </CardHeader>
-                <CardBody className="privacy-legal-card-body">
-                  <div className="disclaimer-text">
-                    <p>
-                      <strong>Investment Risk:</strong> All investments involve
-                      risk, including the potential loss of principal. Target
-                      returns are projections only and are not guaranteed. Past
-                      performance does not guarantee future results.
-                    </p>
-                    <p>
-                      <strong>Not Financial Advice:</strong> Information
-                      provided on this website does not constitute financial,
-                      legal, or tax advice. Investors should consult with
-                      qualified professional advisors before making investment
-                      decisions.
-                    </p>
-                    <p>
-                      <strong>Accredited Investors Only:</strong> Investment
-                      opportunities are available only to accredited investors
-                      as defined by applicable securities regulations. Minimum
-                      qualification requirements apply.
-                    </p>
-                    <p>
-                      <strong>Forward-Looking Statements:</strong> This website
-                      contains forward-looking statements regarding expected
-                      returns, market conditions, and investment performance.
-                      Actual results may differ materially from projections.
-                    </p>
-                    <p>
-                      <strong>Regulatory Compliance:</strong> HBC Holdings
-                      operates in compliance with applicable securities laws and
-                      regulations. Investments are offered through private
-                      placements to qualified investors only.
-                    </p>
-                  </div>
-                </CardBody>
-              </Card>
-
-              <Card id="terms">
-                <CardHeader className="privacy-legal-card-header">
-                  <BarChart3 className="privacy-legal-card-icon" />
-                  <h4>Terms of Service</h4>
-                </CardHeader>
-                <CardBody className="privacy-legal-card-body">
-                  <p className="disclaimer-text">
-                    By accessing this website and expressing interest in HBC
-                    Holdings investment opportunities, you acknowledge and agree
-                    to the following terms:
-                  </p>
-                  <ul className="terms-list">
-                    <li>
-                      You meet the accredited investor requirements in your
-                      jurisdiction
-                    </li>
-                    <li>
-                      You have read and understood all risk disclosures and
-                      legal disclaimers
-                    </li>
-                    <li>
-                      You acknowledge that investments are illiquid and subject
-                      to lock-up periods
-                    </li>
-                    <li>
-                      You agree to provide accurate and complete information
-                      during onboarding
-                    </li>
-                    <li>
-                      You understand that this website is for informational
-                      purposes only
-                    </li>
-                    <li>
-                      You consent to electronic communications and document
-                      delivery
-                    </li>
-                  </ul>
-                </CardBody>
-              </Card>
+      {/* CTA Section */}
+      <section className="investor-hub-cta-section">
+        <div className="investor-hub-cta-content">
+          <div className="cta-header">
+            <HelpCircle className="cta-icon" />
+            <h2 className="cta-title">Have Questions or Need Clarification?</h2>
+            <p className="cta-subtitle">
+              Our investment team is available to provide additional information or walk you through our process.
+            </p>
+          </div>
+          
+          <div className="cta-buttons">
+            <Link to="/express-interest">
+              <Button size="lg" className="primary-cta-btn">
+                Express Interest
+                <ArrowRight className="btn-icon" />
+              </Button>
+            </Link>
+            <Link to="/contact">
+              <Button variant="outline" size="lg" className="secondary-cta-btn">
+                Contact Our Team
+              </Button>
+            </Link>
+          </div>
+          
+          <div className="contact-info">
+            <div className="contact-item">
+              <Mail className="contact-icon" />
+              <span>investors@hbc.com</span>
+            </div>
+            <div className="contact-item">
+              <Phone className="contact-icon" />
+              <span>+1 (555) 123-4567</span>
             </div>
           </div>
         </div>
