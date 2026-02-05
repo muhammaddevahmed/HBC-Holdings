@@ -108,6 +108,14 @@ const Investor = () => {
         {
           q: "What are the main risks I should understand?",
           a: "All investments involve risk, including the potential loss of capital. Key risks include: Market risk (asset value fluctuations); Liquidity risk (limited redemption windows); Operational risk (execution and management); Counterparty risk; Regulatory or legal risk. Our comprehensive risk disclosure documents provide detailed information about all material risks associated with each investment division."
+        },
+        {
+          q: "What happens if an underlying asset loses value?",
+          a: "HBC applies conservative valuation practices and ongoing monitoring. If asset values declinematerially, HBC may take corrective measures, including: Early asset liquidation Portfolio rebalancing Adjustments to deployment strategy Investor capital is prioritized within the definedsettlement and recovery structure, subject to applicable terms."
+        },
+        {
+          q: "What happens if HBC is unable to continue operations?",
+          a: "In such an event, recovery mechanisms may include: Orderly liquidation of underlying assets Proportional capital recovery based on asset realization Structured settlement in accordance with governing agreements Specific outcomes depend on asset class, jurisdiction, and prevailing conditions."
         }
       ]
     },
@@ -134,18 +142,52 @@ const Investor = () => {
         {
           q: "What kind of reporting will I receive?",
           a: "Investors may receive: Quarterly performance summaries; Annual payout or position statements; Material event notifications; Secure email or portal updates. Reporting frequency and format may vary by division."
-        }
+        },
+        {
+          q: "Can I see the underlying assets?",
+          a: "For select asset-backed investments, such as mobility assets, physical inspections may be arranged with prior notice, subject to operational availability."
+        },
+        {
+          q: "How often are assets valued?",
+          a: "Valuation frequency depends on asset class: Automotive and mobility assets: monitored regularly, independently reviewed periodically Real assets: quarterly or semi-annual valuations Alternative assets: semi-annual to annual reviews Independent third-party valuers are used where applicable."
+        },
       ]
     },
-    {
-      title: "Fees & Costs",
+
+     {
+      title: "Fees & Cost",
       questions: [
         {
           q: "Are there any upfront fees?",
-          a: "HBC does not charge upfront subscription or placement fees. Certain third-party costs (e.g., legal reviews, transfer fees) may apply and will be disclosed in advance."
+          a: "HBC does not charge upfront subscription or placement fees. Certain third-party costs (e.g., legal reviews, transfer fees) may apply and will be disclosed in advance"
+        },
+        {
+          q: "What are the tax implications?",
+          a: "Tax treatment depends on jurisdiction, investment structure, and investor profile. HBC does not provide tax advice. Investors are strongly encouraged to consult qualified tax professionals."
+        },
+        {
+          q: "Can I invest through an entity (LLC, trust, retirement account)?",
+          a: "Yes. Investments may be made through approved entities, subject to additional documentation and verification requirements."
+        },
+        {
+          q: "Can I increase my investment later?",
+          a: "Additional capital contributions may be permitted, subject to approval, capacity availability, and risk controls."
+        },
+        {
+          q:"Is capital deployed immediately?",
+          a: "No. Capital is typically deployed progressively to manage risk, preserve liquidity, and optimize entry points."
+        },
+        {
+          q: "Are contract terms negotiable?",
+          a: "Core contractual terms are standardized for regulatory consistency. Limited adjustments may be considered by mutual written agreement."
+        },
+        {
+          q: "What payment methods are accepted?",
+          a: "Payments are accepted only through HBG-approved banking channels or pre-approved digital wallets. Cash and third-party payments are not permitted unless expressly authorized."
         }
       ]
-    }
+    },
+   
   ];
 
   return (
