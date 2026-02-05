@@ -16,7 +16,6 @@ import {
   DollarSign,
   Building,
 } from "lucide-react";
-import Layout from "../components/Layout";
 import Button from "../components/Button";
 import Card, { CardBody } from "../components/Card";
 import "./Home.css";
@@ -131,7 +130,7 @@ export default function Home() {
   ];
 
   return (
-    <Layout activePage="#home">
+    <>
       {/* Hero Section */}
       <section className="home-hero-section">
         <div className="home-hero-content">
@@ -395,6 +394,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 }

@@ -16,7 +16,6 @@ import {
   Tag,
   User
 } from "lucide-react";
-import Layout from "../components/Layout";
 import Card, { CardBody } from "../components/Card";
 import { articles, categories, featuredArticle } from "./Articles";
 import ArticleDetail from "./ArticleDetail";
@@ -53,7 +52,7 @@ export default function Insights() {
   };
 
   return (
-    <Layout activePage="/insights">
+    <>
       {/* Hero Section */}
       <section className="insights-hero-section">
         <div className="hero-pattern"></div>
@@ -247,6 +246,6 @@ export default function Insights() {
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 }

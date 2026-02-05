@@ -1,11 +1,11 @@
-import { 
-  Target, 
-  Eye, 
-  Shield, 
-  Users, 
-  TrendingUp, 
-  Award, 
-  CheckCircle, 
+import {
+  Target,
+  Eye,
+  Shield,
+  Users,
+  TrendingUp,
+  Award,
+  CheckCircle,
   BarChart3,
   FileText,
   Building,
@@ -14,115 +14,177 @@ import {
   Clock,
   DollarSign,
   Zap,
-  Heart
-} from 'lucide-react';
+  Heart,
+} from "lucide-react";
 import { Link } from "react-router-dom";
-import Layout from '../components/Layout';
-import Card, { CardBody } from '../components/Card';
-import Button from '../components/Button';
-import './About.css';
+import Card, { CardBody } from "../components/Card";
+import Button from "../components/Button";
+import "./About.css";
 
 export default function About() {
   const coreValues = [
     {
       icon: <Shield className="w-6 h-6" />,
-      title: 'Built for Discretion',
-      description: 'We handle every investment with confidentiality and professionalism. Investor privacy and information security are fundamental to our operations.'
+      title: "Built for Discretion",
+      description:
+        "We handle every investment with confidentiality and professionalism. Investor privacy and information security are fundamental to our operations.",
     },
     {
       icon: <CheckCircle className="w-6 h-6" />,
-      title: 'Focused on Trust',
-      description: 'Trust is earned through consistency, transparency, and disciplined execution. We prioritize long-term relationships over short-term outcomes.'
+      title: "Focused on Trust",
+      description:
+        "Trust is earned through consistency, transparency, and disciplined execution. We prioritize long-term relationships over short-term outcomes.",
     },
     {
       icon: <Clock className="w-6 h-6" />,
-      title: 'Designed for Longevity',
-      description: 'Our strategies are structured to withstand market cycles, not chase volatility. Sustainability and durability guide every decision.'
+      title: "Designed for Longevity",
+      description:
+        "Our strategies are structured to withstand market cycles, not chase volatility. Sustainability and durability guide every decision.",
     },
     {
       icon: <Users className="w-6 h-6" />,
-      title: 'Investor-Centric',
-      description: 'Investor interests remain central to our decision-making. Alignment, clarity, and accountability are core to how we operate.'
-    }
+      title: "Investor-Centric",
+      description:
+        "Investor interests remain central to our decision-making. Alignment, clarity, and accountability are core to how we operate.",
+    },
   ];
 
   const whyHBGPoints = [
     {
-      number: '1',
-      title: 'Structured Investment Frameworks',
-      description: 'Every HBC investment operates under clearly defined terms, lock-in periods, governance structures, and exit procedures. We avoid informal arrangements and undefined commitments.'
+      number: "1",
+      title: "Structured Investment Frameworks",
+      description:
+        "Every HBC investment operates under clearly defined terms, lock-in periods, governance structures, and exit procedures. We avoid informal arrangements and undefined commitments.",
     },
     {
-      number: '2',
-      title: 'Asset-Backed & Trade-Driven Focus',
-      description: 'Our programs emphasize tangible assets, operational cash flow, and trade-backed instruments rather than purely speculative exposure.'
+      number: "2",
+      title: "Asset-Backed & Trade-Driven Focus",
+      description:
+        "Our programs emphasize tangible assets, operational cash flow, and trade-backed instruments rather than purely speculative exposure.",
     },
     {
-      number: '3',
-      title: 'Risk-Managed Capital Deployment',
-      description: 'Capital is deployed progressively, with diversification, internal controls, and oversight designed to mitigate downside exposure.'
+      number: "3",
+      title: "Risk-Managed Capital Deployment",
+      description:
+        "Capital is deployed progressively, with diversification, internal controls, and oversight designed to mitigate downside exposure.",
     },
     {
-      number: '4',
-      title: 'Defined Term & Settlement Policies',
-      description: 'Lock-in periods, early exit rules, settlement processes, and options are established upfront without ambiguity.'
+      number: "4",
+      title: "Defined Term & Settlement Policies",
+      description:
+        "Lock-in periods, early exit rules, settlement processes, and options are established upfront without ambiguity.",
     },
     {
-      number: '5',
-      title: 'Professional Governance & Compliance',
-      description: 'HBC operates under internal compliance standards, KYC/AML requirements, and documented legal agreements across all investment programs.'
+      number: "5",
+      title: "Professional Governance & Compliance",
+      description:
+        "HBC operates under internal compliance standards, KYC/AML requirements, and documented legal agreements across all investment programs.",
     },
     {
-      number: '6',
-      title: 'Long-Term Partnership Mindset',
-      description: 'We view investors as partners in structured growth, not short-term participants pursuing market volatility.'
-    }
+      number: "6",
+      title: "Long-Term Partnership Mindset",
+      description:
+        "We view investors as partners in structured growth, not short-term participants pursuing market volatility.",
+    },
   ];
 
   const investmentPhilosophy = [
     {
-      title: 'Lean & Efficient Operations',
-      description: 'We maintain a streamlined operating structure to reduce unnecessary overhead and focus resources on sourcing, due diligence, and investor reporting.',
-      icon: <Zap className="w-8 h-8" />
+      title: "Lean & Efficient Operations",
+      description:
+        "We maintain a streamlined operating structure to reduce unnecessary overhead and focus resources on sourcing, due diligence, and investor reporting.",
+      icon: <Zap className="w-8 h-8" />,
     },
     {
-      title: 'Asset-Backed by Design',
-      description: 'Every investment must be supported by tangible or revenue-generating assets with independently verifiable value. This principle underpins our capital protection approach.',
-      icon: <Building className="w-8 h-8" />
+      title: "Asset-Backed by Design",
+      description:
+        "Every investment must be supported by tangible or revenue-generating assets with independently verifiable value. This principle underpins our capital protection approach.",
+      icon: <Building className="w-8 h-8" />,
     },
     {
-      title: 'Rigorous Due Diligence',
-      description: 'All opportunities undergo comprehensive legal, financial, and operational review before capital deployment. No investment proceeds without documented assessment and approval.',
-      icon: <FileText className="w-8 h-8" />
-    }
+      title: "Rigorous Due Diligence",
+      description:
+        "All opportunities undergo comprehensive legal, financial, and operational review before capital deployment. No investment proceeds without documented assessment and approval.",
+      icon: <FileText className="w-8 h-8" />,
+    },
   ];
 
   const capitalProtection = [
-    { number: '1', title: 'Physical or revenue-generating asset backing' },
-    { number: '2', title: 'Notarized and legally recognized investment agreements' },
-    { number: '3', title: 'Insurance coverage (where applicable)' },
-    { number: '4', title: 'Commercial contracts and asset documentation' },
-    { number: '5', title: 'Post-dated instruments or structured repayment mechanisms' },
-    { number: '6', title: 'Phased and controlled capital deployment frameworks' }
+    { number: "1", title: "Physical or revenue-generating asset backing" },
+    {
+      number: "2",
+      title: "Notarized and legally recognized investment agreements",
+    },
+    { number: "3", title: "Insurance coverage (where applicable)" },
+    { number: "4", title: "Commercial contracts and asset documentation" },
+    {
+      number: "5",
+      title: "Post-dated instruments or structured repayment mechanisms",
+    },
+    {
+      number: "6",
+      title: "Phased and controlled capital deployment frameworks",
+    },
   ];
 
   const timeline = [
-    { year: '2015', event: 'Company Founded', description: 'HBC was established with a focus on structured, asset-backed investments.' },
-    { year: '2019', event: 'First Fund Launch', description: 'Launch of the Mobility & Luxury Automotive investment division.' },
-    { year: '2021', event: 'Expansion', description: 'Introduction of Sustainable Markets and Alternative Investment programs.' },
-    { year: '2023', event: 'Milestone Achieved', description: 'Surpassed $200M in assets under management.' },
-    { year: '2025', event: 'Digital Platform', description: 'Launch of investor portal and enhanced reporting infrastructure.' },
-    { year: '2026', event: 'Continued Growth', description: 'Expansion into additional markets with over 500 active investors.' }
+    {
+      year: "2015",
+      event: "Company Founded",
+      description:
+        "HBC was established with a focus on structured, asset-backed investments.",
+    },
+    {
+      year: "2019",
+      event: "First Fund Launch",
+      description:
+        "Launch of the Mobility & Luxury Automotive investment division.",
+    },
+    {
+      year: "2021",
+      event: "Expansion",
+      description:
+        "Introduction of Sustainable Markets and Alternative Investment programs.",
+    },
+    {
+      year: "2023",
+      event: "Milestone Achieved",
+      description: "Surpassed $200M in assets under management.",
+    },
+    {
+      year: "2025",
+      event: "Digital Platform",
+      description:
+        "Launch of investor portal and enhanced reporting infrastructure.",
+    },
+    {
+      year: "2026",
+      event: "Continued Growth",
+      description:
+        "Expansion into additional markets with over 500 active investors.",
+    },
   ];
 
   const teamExpertise = [
-    { area: 'Mobility & Logistics', description: 'Specialized knowledge in automotive assets and supply chain optimization' },
-    { area: 'Eco-Infrastructure', description: 'Experience in sustainable projects and renewable energy investments' },
-    { area: 'Alternative Investment', description: 'Expertise in non-traditional asset classes and structured finance' }
+    {
+      area: "Mobility & Logistics",
+      description:
+        "Specialized knowledge in automotive assets and supply chain optimization",
+    },
+    {
+      area: "Eco-Infrastructure",
+      description:
+        "Experience in sustainable projects and renewable energy investments",
+    },
+    {
+      area: "Alternative Investment",
+      description:
+        "Expertise in non-traditional asset classes and structured finance",
+    },
   ];
 
   return (
-    <Layout activePage="#about">
+    <>
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
@@ -132,12 +194,14 @@ export default function About() {
               <span>Structured Asset-Backed Investments</span>
             </div>
             <h1 className="hero-title">
-              Private Investment Firm Focused on <span className="highlight">Structured Growth</span>
+              Private Investment Firm Focused on{" "}
+              <span className="highlight">Structured Growth</span>
             </h1>
             <p className="hero-description">
-              HBC is a private investment firm focused on structured, asset-backed, and alternative investment 
-              programs. Our approach prioritizes capital discipline, risk management, and long-term value creation 
-              across carefully selected sectors.
+              HBC is a private investment firm focused on structured,
+              asset-backed, and alternative investment programs. Our approach
+              prioritizes capital discipline, risk management, and long-term
+              value creation across carefully selected sectors.
             </p>
           </div>
         </div>
@@ -152,17 +216,21 @@ export default function About() {
                 Who <span className="accent-text">We Are</span>
               </h2>
               <p className="section-text">
-                HBC was established on a practical principle: investment structures should be clear, 
-                disciplined, and grounded in real assets — not speculation.
+                HBC was established on a practical principle: investment
+                structures should be clear, disciplined, and grounded in real
+                assets — not speculation.
               </p>
               <p className="section-text">
-                HBC designs and manages structured programs that give investors access to professionally 
-                managed opportunities without requiring day-to-day involvement. Each program is governed by 
-                defined terms, documented processes, and established exit frameworks.
+                HBC designs and manages structured programs that give investors
+                access to professionally managed opportunities without requiring
+                day-to-day involvement. Each program is governed by defined
+                terms, documented processes, and established exit frameworks.
               </p>
-              
+
               <div className="expertise-section">
-                <h3 className="expertise-title">Our Team Brings Experience Across:</h3>
+                <h3 className="expertise-title">
+                  Our Team Brings Experience Across:
+                </h3>
                 <div className="expertise-grid">
                   {teamExpertise.map((item, index) => (
                     <div key={index} className="expertise-card">
@@ -173,7 +241,9 @@ export default function About() {
                       </div>
                       <div>
                         <h4 className="expertise-area">{item.area}</h4>
-                        <p className="expertise-description">{item.description}</p>
+                        <p className="expertise-description">
+                          {item.description}
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -203,8 +273,9 @@ export default function About() {
                   </div>
                   <h3 className="card-title">Our Vision</h3>
                   <p className="card-text">
-                    To stand among the world's most trusted private investment groups, building structures 
-                    and partnerships designed to endure.
+                    To stand among the world's most trusted private investment
+                    groups, building structures and partnerships designed to
+                    endure.
                   </p>
                 </div>
               </CardBody>
@@ -218,8 +289,8 @@ export default function About() {
                   </div>
                   <h3 className="card-title">Our Mission</h3>
                   <p className="card-text">
-                    To act as responsible stewards of investor capital, guided by discipline, trust, 
-                    and long-term thinking.
+                    To act as responsible stewards of investor capital, guided
+                    by discipline, trust, and long-term thinking.
                   </p>
                 </div>
               </CardBody>
@@ -236,7 +307,8 @@ export default function About() {
               Our <span className="accent-text">Core Values</span>
             </h2>
             <p className="section-subtitle">
-              Our values guide how we structure investments, manage relationships, and operate as a firm.
+              Our values guide how we structure investments, manage
+              relationships, and operate as a firm.
             </p>
           </div>
 
@@ -245,9 +317,7 @@ export default function About() {
               <Card key={index} className="value-card">
                 <CardBody>
                   <div className="value-card-content">
-                    <div className="value-icon-container">
-                      {value.icon}
-                    </div>
+                    <div className="value-icon-container">{value.icon}</div>
                     <h4 className="value-title">{value.title}</h4>
                     <p className="value-description">{value.description}</p>
                   </div>
@@ -292,7 +362,8 @@ export default function About() {
               Investment <span className="accent-text">Philosophy</span>
             </h2>
             <p className="section-subtitle">
-              Our investment philosophy is built on discipline, structure, and risk awareness.
+              Our investment philosophy is built on discipline, structure, and
+              risk awareness.
             </p>
           </div>
 
@@ -301,11 +372,11 @@ export default function About() {
               <Card key={index} className="philosophy-card">
                 <CardBody>
                   <div className="philosophy-card-content">
-                    <div className="philosophy-icon">
-                      {principle.icon}
-                    </div>
+                    <div className="philosophy-icon">{principle.icon}</div>
                     <h3 className="philosophy-title">{principle.title}</h3>
-                    <p className="philosophy-description">{principle.description}</p>
+                    <p className="philosophy-description">
+                      {principle.description}
+                    </p>
                   </div>
                 </CardBody>
               </Card>
@@ -320,11 +391,13 @@ export default function About() {
           <div className="protection-grid">
             <div>
               <h2 className="section-title">
-                Capital Protection <span className="accent-text">Framework</span>
+                Capital Protection{" "}
+                <span className="accent-text">Framework</span>
               </h2>
               <p className="section-text">
-                HBC applies a multi-layered approach to capital protection, designed to reduce 
-                risk exposure, though they do not eliminate investment risk entirely.
+                HBC applies a multi-layered approach to capital protection,
+                designed to reduce risk exposure, though they do not eliminate
+                investment risk entirely.
               </p>
               <div className="protection-points">
                 {capitalProtection.map((item, index) => (
@@ -354,30 +427,41 @@ export default function About() {
               Corporate <span className="accent-text">Responsibility</span>
             </h2>
             <p className="section-subtitle">
-              HBC integrates responsible investment considerations into its operations
+              HBC integrates responsible investment considerations into its
+              operations
             </p>
           </div>
-          
+
           <div className="responsibility-grid">
             <div className="responsibility-card">
               <Heart className="responsibility-icon" />
               <h3>Sustainable & Eco-Focused Projects</h3>
-              <p>Investments aligned with environmental sustainability and long-term ecological value</p>
+              <p>
+                Investments aligned with environmental sustainability and
+                long-term ecological value
+              </p>
             </div>
             <div className="responsibility-card">
               <Building className="responsibility-icon" />
               <h3>Infrastructure Development</h3>
-              <p>Supporting economic development through essential infrastructure investments</p>
+              <p>
+                Supporting economic development through essential infrastructure
+                investments
+              </p>
             </div>
             <div className="responsibility-card">
               <Globe className="responsibility-icon" />
               <h3>Social Impact Initiatives</h3>
-              <p>Select initiatives aligned with long-term value creation and community development</p>
+              <p>
+                Select initiatives aligned with long-term value creation and
+                community development
+              </p>
             </div>
           </div>
-          
+
           <p className="responsibility-note">
-            Responsibility and sustainability are treated as part of risk management, not marketing narratives.
+            Responsibility and sustainability are treated as part of risk
+            management, not marketing narratives.
           </p>
         </div>
       </section>
@@ -404,7 +488,9 @@ export default function About() {
                       <CardBody>
                         <div className="timeline-year">{item.year}</div>
                         <h4 className="timeline-event">{item.event}</h4>
-                        <p className="timeline-description">{item.description}</p>
+                        <p className="timeline-description">
+                          {item.description}
+                        </p>
                       </CardBody>
                     </Card>
                   </div>
@@ -420,21 +506,19 @@ export default function About() {
       <section className="about-cta-section">
         <div className="about-cta-content">
           <div className="about-cta-text">
-            <h2 className="about-cta-title">
-              Invest with HBC
-            </h2>
+            <h2 className="about-cta-title">Invest with HBC</h2>
             <p className="about-cta-subtitle">
-              Explore structured, asset-backed investment opportunities designed with discipline, 
-              clarity, and long-term focus.
+              Explore structured, asset-backed investment opportunities designed
+              with discipline, clarity, and long-term focus.
             </p>
           </div>
           <Link to="/express-interest">
-            <Button size="lg" style={{ backgroundColor: '#1f4d2e' }}>
+            <Button size="lg" style={{ backgroundColor: "#1f4d2e" }}>
               Express Investment Interest
             </Button>
           </Link>
         </div>
       </section>
-    </Layout>
+    </>
   );
 }

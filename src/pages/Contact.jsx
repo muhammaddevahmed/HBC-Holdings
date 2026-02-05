@@ -1,90 +1,100 @@
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
-import { Mail, Phone, MapPin, MessageSquare, Send, Linkedin, Twitter, Facebook, Clock, Shield, User } from 'lucide-react';
-import Layout from '../components/Layout';
-import Input, { Textarea, Select } from '../components/Input';
-import Button from '../components/Button';
-import Card, { CardBody, CardHeader } from '../components/Card';
-import './Contact.css';
-import Chatbot from '../components/Chatbot';
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  MessageSquare,
+  Send,
+  Linkedin,
+  Twitter,
+  Facebook,
+  Clock,
+  Shield,
+  User,
+} from "lucide-react";
+import Input, { Textarea, Select } from "../components/Input";
+import Button from "../components/Button";
+import Card, { CardBody, CardHeader } from "../components/Card";
+import "./Contact.css";
+import Chatbot from "../components/Chatbot";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
 
   const subjectOptions = [
-    { value: '', label: 'Select a subject' },
-    { value: 'investment-inquiry', label: 'Investment Inquiry' },
-    { value: 'existing-investor', label: 'Existing Investment Support' },
-    { value: 'partnership', label: 'Partnership Opportunity' },
-    { value: 'media', label: 'Media & Press Inquiry' },
-    { value: 'other', label: 'Other' }
+    { value: "", label: "Select a subject" },
+    { value: "investment-inquiry", label: "Investment Inquiry" },
+    { value: "existing-investor", label: "Existing Investment Support" },
+    { value: "partnership", label: "Partnership Opportunity" },
+    { value: "media", label: "Media & Press Inquiry" },
+    { value: "other", label: "Other" },
   ];
 
   const contactMethods = [
     {
       icon: <Mail className="w-6 h-6" />,
-      title: 'Email',
-      details: 'info@HBC.com',
-      description: 'For investment inquiries and general questions',
-      link: 'mailto:info@HBC.com',
-      linkText: 'Send Email',
-      directAction: true
+      title: "Email",
+      details: "info@HBC.com",
+      description: "For investment inquiries and general questions",
+      link: "mailto:info@HBC.com",
+      linkText: "Send Email",
+      directAction: true,
     },
     {
       icon: <MessageSquare className="w-6 h-6" />,
-      title: 'WhatsApp',
-      details: '+1 (555) 123-4567',
-      description: 'Quick questions and general inquiries (non-transactional)',
-      link: 'https://wa.me/15551234567',
-      linkText: 'Start Chat',
-      directAction: true
+      title: "WhatsApp",
+      details: "+1 (555) 123-4567",
+      description: "Quick questions and general inquiries (non-transactional)",
+      link: "https://wa.me/15551234567",
+      linkText: "Start Chat",
+      directAction: true,
     },
     {
       icon: <Phone className="w-6 h-6" />,
-      title: 'Phone',
-      details: '+1 (555) 123-4567',
-      description: 'Monday–Saturday | 24/7 Availability',
-      link: 'tel:+15551234567',
-      linkText: 'Call Now',
-      directAction: true
+      title: "Phone",
+      details: "+1 (555) 123-4567",
+      description: "Monday–Saturday | 24/7 Availability",
+      link: "tel:+15551234567",
+      linkText: "Call Now",
+      directAction: true,
     },
-
   ];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Contact form submitted:', formData);
+    console.log("Contact form submitted:", formData);
     setSubmitted(true);
-    
+
     setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: ''
+      name: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
     });
 
     setTimeout(() => setSubmitted(false), 5000);
   };
 
   return (
-    <Layout activePage="/contact">
+    <>
       {/* Hero Section */}
       <section className="contact-hero-section">
         <div className="contact-hero-content">
@@ -93,8 +103,9 @@ export default function Contact() {
               Contact <span className="contact-hero-title-highlight">HBC</span>
             </h1>
             <p className="contact-hero-description">
-              Our investment team is ready to answer your questions and discuss how HBC can help you
-              achieve your financial objectives through structured, asset-backed investment solutions.
+              Our investment team is ready to answer your questions and discuss
+              how HBC can help you achieve your financial objectives through
+              structured, asset-backed investment solutions.
             </p>
           </div>
         </div>
@@ -106,7 +117,10 @@ export default function Contact() {
           <div className="contact-methods-header">
             <div className="contact-methods-title-container">
               <h2 className="contact-methods-title">
-                Choose Your <span className="contact-methods-title-highlight">Contact Method</span>
+                Choose Your{" "}
+                <span className="contact-methods-title-highlight">
+                  Contact Method
+                </span>
               </h2>
               <div className="contact-methods-badge">
                 <Clock className="w-4 h-4" />
@@ -114,7 +128,9 @@ export default function Contact() {
               </div>
             </div>
             <p className="contact-methods-subtitle">
-              Reach out through your preferred channel. All CTAs are direct-action buttons and will take you immediately to the selected contact method.
+              Reach out through your preferred channel. All CTAs are
+              direct-action buttons and will take you immediately to the
+              selected contact method.
             </p>
           </div>
 
@@ -132,12 +148,18 @@ export default function Contact() {
                   </div>
                   <h4 className="contact-method-title">{method.title}</h4>
                   <p className="contact-method-details">{method.details}</p>
-                  <p className="contact-method-description">{method.description}</p>
-                  <a 
+                  <p className="contact-method-description">
+                    {method.description}
+                  </p>
+                  <a
                     href={method.link}
                     className="contact-method-link"
-                    target={method.link.startsWith('http') ? '_blank' : '_self'}
-                    rel={method.link.startsWith('http') ? 'noopener noreferrer' : ''}
+                    target={method.link.startsWith("http") ? "_blank" : "_self"}
+                    rel={
+                      method.link.startsWith("http")
+                        ? "noopener noreferrer"
+                        : ""
+                    }
                   >
                     {method.linkText}
                     <span className="contact-method-link-arrow">→</span>
@@ -162,7 +184,7 @@ export default function Contact() {
                   <span>Your information is kept confidential</span>
                 </div>
               </div>
-              
+
               <Card className="contact-form-card">
                 <CardBody>
                   {submitted ? (
@@ -170,9 +192,12 @@ export default function Contact() {
                       <div className="form-submitted-icon-container">
                         <Send className="form-submitted-icon" />
                       </div>
-                      <h4 className="form-submitted-title">Message Sent Successfully!</h4>
+                      <h4 className="form-submitted-title">
+                        Message Sent Successfully!
+                      </h4>
                       <p className="form-submitted-text">
-                        Thank you for contacting HBC. Our investment team will respond within 24 business hours.
+                        Thank you for contacting HBC. Our investment team will
+                        respond within 24 business hours.
                       </p>
                     </div>
                   ) : (
@@ -186,7 +211,7 @@ export default function Contact() {
                         icon={<User className="w-5 h-5" />}
                         required
                       />
-                      
+
                       <div className="form-grid">
                         <Input
                           label="Email Address*"
@@ -233,14 +258,22 @@ export default function Contact() {
                         <div className="form-compliance">
                           <div className="recaptcha-notice">
                             <Shield className="w-4 h-4" />
-                            <span>This form is protected by reCAPTCHA and subject to spam filtering.</span>
+                            <span>
+                              This form is protected by reCAPTCHA and subject to
+                              spam filtering.
+                            </span>
                           </div>
                           <p className="form-privacy-note">
-                            Your information is kept confidential and used solely for communication with HBC.
+                            Your information is kept confidential and used
+                            solely for communication with HBC.
                           </p>
                         </div>
 
-                        <Button type="submit" className="form-submit-button" size="lg">
+                        <Button
+                          type="submit"
+                          className="form-submit-button"
+                          size="lg"
+                        >
                           Send Message
                           <Send className="w-5 h-5 ml-2" />
                         </Button>
@@ -263,13 +296,18 @@ export default function Contact() {
                   <div className="business-hours-content">
                     <div className="business-hours-main">
                       <div className="business-hours-item">
-                        <span className="business-hours-period">Monday–Saturday</span>
-                        <span className="business-hours-time">24/7 Availability</span>
+                        <span className="business-hours-period">
+                          Monday–Saturday
+                        </span>
+                        <span className="business-hours-time">
+                          24/7 Availability
+                        </span>
                       </div>
                     </div>
                     <div className="business-hours-note">
                       <p>
-                        For urgent investor matters outside business hours, please email us and we will respond as soon as possible.
+                        For urgent investor matters outside business hours,
+                        please email us and we will respond as soon as possible.
                       </p>
                     </div>
                   </div>
@@ -282,15 +320,16 @@ export default function Contact() {
                   <div className="social-header">
                     <h4>Connect With Us</h4>
                     <p className="social-subtitle">
-                      Follow HBC on social media for market insights, company updates, and investment education.
+                      Follow HBC on social media for market insights, company
+                      updates, and investment education.
                     </p>
                   </div>
                 </CardHeader>
                 <CardBody>
                   <div className="social-media-links">
-                    <a 
-                      href="https://linkedin.com/company/HBC" 
-                      target="_blank" 
+                    <a
+                      href="https://linkedin.com/company/HBC"
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="social-media-link"
                       aria-label="LinkedIn"
@@ -298,9 +337,9 @@ export default function Contact() {
                       <Linkedin className="social-media-icon" />
                       <span>LinkedIn</span>
                     </a>
-                    <a 
-                      href="https://twitter.com/HBC" 
-                      target="_blank" 
+                    <a
+                      href="https://twitter.com/HBC"
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="social-media-link"
                       aria-label="Twitter"
@@ -308,9 +347,9 @@ export default function Contact() {
                       <Twitter className="social-media-icon" />
                       <span>Twitter</span>
                     </a>
-                    <a 
-                      href="https://facebook.com/HBC" 
-                      target="_blank" 
+                    <a
+                      href="https://facebook.com/HBC"
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="social-media-link"
                       aria-label="Facebook"
@@ -349,8 +388,10 @@ export default function Contact() {
                   <Shield className="w-5 h-5" />
                 </div>
                 <p className="compliance-text">
-                  Submitting an inquiry does not constitute an offer to invest. All investment opportunities are
-                  subject to eligibility, compliance review, and formal documentation. Investments involve risk.
+                  Submitting an inquiry does not constitute an offer to invest.
+                  All investment opportunities are subject to eligibility,
+                  compliance review, and formal documentation. Investments
+                  involve risk.
                 </p>
               </div>
             </div>
@@ -361,11 +402,10 @@ export default function Contact() {
       {/* Quick Actions */}
       <section className="quick-actions-section">
         <div className="quick-actions-content">
-          <h2 className="quick-actions-title">
-            Ready to Get Started?
-          </h2>
+          <h2 className="quick-actions-title">Ready to Get Started?</h2>
           <p className="quick-actions-subtitle">
-            Express your investment interest or review our available opportunities to begin your journey with HBC.
+            Express your investment interest or review our available
+            opportunities to begin your journey with HBC.
           </p>
           <div className="quick-actions-buttons">
             <Link to="/express-interest">
@@ -374,8 +414,8 @@ export default function Contact() {
               </Button>
             </Link>
             <Link to="/investments">
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="lg"
                 className="quick-actions-button-outline"
               >
@@ -386,6 +426,6 @@ export default function Contact() {
         </div>
       </section>
       <Chatbot />
-    </Layout>
+    </>
   );
 }

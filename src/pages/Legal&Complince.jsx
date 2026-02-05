@@ -1,9 +1,20 @@
-import { useState } from 'react';
-import { FileText, Shield, Lock, AlertTriangle, Download, ChevronDown, CheckCircle, Eye, Globe, Users, Target } from 'lucide-react';
-import Layout from '../components/Layout';
-import Button from '../components/Button';
-import Card, { CardBody, CardHeader } from '../components/Card';
-import './Legal.css';
+import { useState } from "react";
+import {
+  FileText,
+  Shield,
+  Lock,
+  AlertTriangle,
+  Download,
+  ChevronDown,
+  CheckCircle,
+  Eye,
+  Globe,
+  Users,
+  Target,
+} from "lucide-react";
+import Button from "../components/Button";
+import Card, { CardBody, CardHeader } from "../components/Card";
+import "./Legal.css";
 
 export default function Legal() {
   const [expandedSection, setExpandedSection] = useState(null);
@@ -14,11 +25,12 @@ export default function Legal() {
 
   const pageSections = [
     {
-      id: 'risk',
-      title: 'Risk Disclosure',
+      id: "risk",
+      title: "Risk Disclosure",
       icon: <AlertTriangle className="w-6 h-6" />,
-      color: 'var(--accent-orange)',
-      summary: 'Investing involves risk, including potential loss of capital. Risk varies by structure and asset class.',
+      color: "var(--accent-orange)",
+      summary:
+        "Investing involves risk, including potential loss of capital. Risk varies by structure and asset class.",
       content: `
         <h4>Investment Risk Overview</h4>
         <p>All investments offered by Highbridge Group (HBC) involve risk, including the potential loss of principal capital. The nature and level of risk vary significantly across different investment structures, asset classes, and market conditions.</p>
@@ -48,14 +60,15 @@ export default function Legal() {
         
         <p><em>Note: This summary is for informational purposes only. The complete Risk Disclosure Document contains detailed information about all material risks.</em></p>
       `,
-      downloadUrl: '/documents/risk-disclosure.pdf'
+      downloadUrl: "/documents/risk-disclosure.pdf",
     },
     {
-      id: 'terms',
-      title: 'Terms of Service',
+      id: "terms",
+      title: "Terms of Service",
       icon: <FileText className="w-6 h-6" />,
-      color: 'var(--brand-green)',
-      summary: 'Website Use & Investor Acknowledgments governing access to HBC digital services.',
+      color: "var(--brand-green)",
+      summary:
+        "Website Use & Investor Acknowledgments governing access to HBC digital services.",
       content: `
         <h4>Website Access and Use</h4>
         <p>These Terms of Service govern access to and use of the Highbridge Group (HBC) website and related digital services. By accessing this website, submitting an expression of interest, or engaging with HBC, you acknowledge and agree to the following terms:</p>
@@ -119,14 +132,15 @@ export default function Legal() {
         <h4>Governing Law</h4>
         <p>These terms are governed by the laws of the State of New York, without regard to conflict of law principles.</p>
       `,
-      downloadUrl: '/documents/terms-of-service.pdf'
+      downloadUrl: "/documents/terms-of-service.pdf",
     },
     {
-      id: 'privacy',
-      title: 'Data & Privacy Policy',
+      id: "privacy",
+      title: "Data & Privacy Policy",
       icon: <Lock className="w-6 h-6" />,
-      color: 'var(--support-green)',
-      summary: 'Protection of personal and investor information in accordance with regulatory standards.',
+      color: "var(--support-green)",
+      summary:
+        "Protection of personal and investor information in accordance with regulatory standards.",
       content: `
         <h4>Privacy Commitment</h4>
         <p>Highbridge Group (HBC) is committed to safeguarding the privacy and confidentiality of all visitors and investors. This policy outlines how we collect, use, store, and protect personal information.</p>
@@ -206,7 +220,7 @@ export default function Legal() {
         <h4>Your Rights</h4>
         <p>Depending on your jurisdiction, you may have rights to access, correct, delete, or restrict processing of your personal information. To exercise these rights, please contact our compliance team.</p>
       `,
-      downloadUrl: '/documents/privacy-policy.pdf'
+      downloadUrl: "/documents/privacy-policy.pdf",
     },
     // {
     //   id: 'governance',
@@ -217,7 +231,7 @@ export default function Legal() {
     //   content: `
     //     <h4>Governance Framework</h4>
     //     <p>HBG operates under a comprehensive internal governance framework designed to support disciplined investment execution, regulatory compliance, and investor protection.</p>
-        
+
     //     <h4>Key Governance Components</h4>
     //     <div class="governance-components">
     //       <div class="component-card">
@@ -227,7 +241,7 @@ export default function Legal() {
     //         </div>
     //         <p>Standardized investment documentation ensuring clarity of terms, rights, and obligations. All agreements undergo legal review and are executed digitally with audit trails.</p>
     //       </div>
-          
+
     //       <div class="component-card">
     //         <div class="component-header">
     //           <div class="component-number">02</div>
@@ -235,7 +249,7 @@ export default function Legal() {
     //         </div>
     //         <p>Robust identity verification, source of funds validation, and ongoing monitoring to prevent financial crime and ensure regulatory compliance across jurisdictions.</p>
     //       </div>
-          
+
     //       <div class="component-card">
     //         <div class="component-header">
     //           <div class="component-number">03</div>
@@ -243,7 +257,7 @@ export default function Legal() {
     //         </div>
     //         <p>Continuous evaluation of investment risks, market conditions, and portfolio performance with escalation protocols for material changes or concerns.</p>
     //       </div>
-          
+
     //       <div class="component-card">
     //         <div class="component-header">
     //           <div class="component-number">04</div>
@@ -252,7 +266,7 @@ export default function Legal() {
     //         <p>Predefined settlement procedures, liquidation protocols, and capital recovery mechanisms designed to protect investor interests in various scenarios.</p>
     //       </div>
     //     </div>
-        
+
     //     <h4>Compliance Oversight</h4>
     //     <p>HBG maintains a dedicated compliance function responsible for:</p>
     //     <ul>
@@ -262,7 +276,7 @@ export default function Legal() {
     //       <li>Maintaining records in accordance with regulatory requirements</li>
     //       <li>Managing regulatory relationships and reporting obligations</li>
     //     </ul>
-        
+
     //     <h4>Investor Participation Requirements</h4>
     //     <p>Participation in any HBG investment program is strictly subject to:</p>
     //     <div class="requirements-grid">
@@ -283,7 +297,7 @@ export default function Legal() {
     //         <p>Formal agreement signing and confirmation of understanding</p>
     //       </div>
     //     </div>
-        
+
     //     <h4>Transparency & Reporting</h4>
     //     <p>HBG provides regular reporting to investors including performance updates, material developments, and compliance-related disclosures as required by applicable regulations.</p>
     //   `,
@@ -292,13 +306,14 @@ export default function Legal() {
   ];
 
   return (
-    <Layout activePage="/legal">
+    <>
       {/* Hero Section */}
       <section className="legal-hero-section">
         <div className="legal-hero-content">
           <div className="legal-hero-text-container">
             <h1 className="legal-hero-title">
-              Legal & <span className="legal-hero-title-highlight">Compliance</span>
+              Legal &{" "}
+              <span className="legal-hero-title-highlight">Compliance</span>
             </h1>
             <p className="legal-hero-description">
               Transparency, Accountability, and Investor Protection
@@ -307,9 +322,11 @@ export default function Legal() {
               <AlertTriangle className="w-6 h-6" />
               <div>
                 <p>
-                  <strong>Important Notice:</strong> Participation is subject to eligibility, suitability assessment, 
-                  compliance review, and formal documentation. Prospective investors should review all materials 
-                  carefully and consult independent professional advisors before making any investment decision.
+                  <strong>Important Notice:</strong> Participation is subject to
+                  eligibility, suitability assessment, compliance review, and
+                  formal documentation. Prospective investors should review all
+                  materials carefully and consult independent professional
+                  advisors before making any investment decision.
                 </p>
               </div>
             </div>
@@ -323,16 +340,18 @@ export default function Legal() {
           <h2 className="legal-nav-title">Page Navigation</h2>
           <div className="legal-nav-grid">
             {pageSections.map((section) => (
-              <a 
+              <a
                 key={section.id}
                 href={`#${section.id}`}
                 className="legal-nav-card"
                 onClick={(e) => {
                   e.preventDefault();
-                  document.getElementById(section.id)?.scrollIntoView({ behavior: 'smooth' });
+                  document
+                    .getElementById(section.id)
+                    ?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
-                <div 
+                <div
                   className="legal-nav-icon"
                   style={{ backgroundColor: section.color }}
                 >
@@ -349,18 +368,14 @@ export default function Legal() {
       <section className="legal-content-section">
         <div className="legal-content-container">
           {pageSections.map((section) => (
-            <div 
-              key={section.id}
-              id={section.id}
-              className="legal-section"
-            >
+            <div key={section.id} id={section.id} className="legal-section">
               <Card className="legal-section-card">
-                <CardHeader 
+                <CardHeader
                   className="legal-section-header"
                   onClick={() => toggleSection(section.id)}
                 >
                   <div className="legal-section-title-container">
-                    <div 
+                    <div
                       className="legal-section-icon"
                       style={{ backgroundColor: section.color }}
                     >
@@ -372,7 +387,7 @@ export default function Legal() {
                     </div>
                   </div>
                   <div className="legal-section-actions">
-                    <Button 
+                    <Button
                       variant="outline"
                       size="sm"
                       className="legal-download-button"
@@ -385,29 +400,36 @@ export default function Legal() {
                       <Download className="w-4 h-4" />
                       Download PDF
                     </Button>
-                    <ChevronDown 
-                      className={`legal-expand-icon ${expandedSection === section.id ? 'expanded' : ''}`}
+                    <ChevronDown
+                      className={`legal-expand-icon ${expandedSection === section.id ? "expanded" : ""}`}
                     />
                   </div>
                 </CardHeader>
-                
-                <CardBody className={`legal-section-body ${expandedSection === section.id ? 'expanded' : ''}`}>
-                  <div 
+
+                <CardBody
+                  className={`legal-section-body ${expandedSection === section.id ? "expanded" : ""}`}
+                >
+                  <div
                     className="legal-section-content"
                     dangerouslySetInnerHTML={{ __html: section.content }}
                   />
-                  
+
                   <div className="legal-download-footer">
                     <div className="download-info">
                       <FileText className="w-5 h-5" />
                       <div>
                         <strong>Complete Document Available</strong>
-                        <p>Download the full {section.title} for detailed information</p>
+                        <p>
+                          Download the full {section.title} for detailed
+                          information
+                        </p>
                       </div>
                     </div>
-                    <Button 
+                    <Button
                       className="download-full-button"
-                      onClick={() => console.log(`Downloading full ${section.title}`)}
+                      onClick={() =>
+                        console.log(`Downloading full ${section.title}`)
+                      }
                     >
                       <Download className="w-5 h-5" />
                       Download Full Document
@@ -434,37 +456,47 @@ export default function Legal() {
                   <div className="notice-icon">⚠️</div>
                   <div>
                     <strong>Regulatory Compliance</strong>
-                    <p>All investments are offered in compliance with applicable securities laws and regulations</p>
+                    <p>
+                      All investments are offered in compliance with applicable
+                      securities laws and regulations
+                    </p>
                   </div>
                 </div>
                 <div className="notice-point">
                   <div className="notice-icon">📋</div>
                   <div>
                     <strong>Documentation Required</strong>
-                    <p>Formal participation requires execution of legal agreements and completion of compliance documentation</p>
+                    <p>
+                      Formal participation requires execution of legal
+                      agreements and completion of compliance documentation
+                    </p>
                   </div>
                 </div>
                 <div className="notice-point">
                   <div className="notice-icon">⚖️</div>
                   <div>
                     <strong>Professional Advice</strong>
-                    <p>Investors should consult with qualified legal, tax, and financial advisors before making investment decisions</p>
+                    <p>
+                      Investors should consult with qualified legal, tax, and
+                      financial advisors before making investment decisions
+                    </p>
                   </div>
                 </div>
                 <div className="notice-point">
                   <div className="notice-icon">🔒</div>
                   <div>
                     <strong>Confidentiality</strong>
-                    <p>All investment materials are confidential and for qualified investors only</p>
+                    <p>
+                      All investment materials are confidential and for
+                      qualified investors only
+                    </p>
                   </div>
                 </div>
               </div>
-              
-              
             </div>
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 }

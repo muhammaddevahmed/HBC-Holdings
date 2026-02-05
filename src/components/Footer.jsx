@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="footer-company-info">
              <div className="footer-logo-container">
               <Link to="/" className="footer-logo">
-                <img src="../public/logo.png" alt="HBC Logo" />
+                <img src="../public/footerlogo.png" alt="HBC Logo" />
               </Link>
             </div>
             <p className="footer-company-description">

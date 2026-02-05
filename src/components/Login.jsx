@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Mail, ArrowRight, Key, User } from "lucide-react";
-import Layout from "../components/Layout";
 import "./Login.css";
 
 export default function Login() {
@@ -19,12 +18,16 @@ export default function Login() {
   };
 
   return (
-    <Layout>
+    <>
       <div className="login-page">
         <div className="login-container">
           <div className="login-header">
             <div className="login-logo-container">
-              <img src="/logo.png" alt="HBC Holdings Logo" className="logo-img" />
+              <img
+                src="/logo.png"
+                alt="HBC Holdings Logo"
+                className="logo-img"
+              />
             </div>
             <h1>Admin Portal</h1>
             <p>Secure access for authorized administrators</p>
@@ -34,7 +37,6 @@ export default function Login() {
             <div className="form-group">
               <label htmlFor="email">Email Address</label>
               <div className="input-wrapper">
-                
                 <input
                   type="email"
                   id="email"
@@ -49,7 +51,6 @@ export default function Login() {
             <div className="form-group">
               <label htmlFor="password">Password</label>
               <div className="input-wrapper">
-                
                 <input
                   type="password"
                   id="password"
@@ -67,19 +68,17 @@ export default function Login() {
             </button>
           </form>
 
-          
-            <div className="demo-credentials">
-              <p className="demo-title">Demo Admin Credentials:</p>
-              <div className="credential-row">
-                <span className="label">Email:</span>
-                <span className="value">admin@hbcholdings.com</span>
-              </div>
-              <div className="credential-row">
-                <span className="label">Password:</span>
-                <span className="value">password123</span>
-              </div>
+          <div className="demo-credentials">
+            <p className="demo-title">Demo Admin Credentials:</p>
+            <div className="credential-row">
+              <span className="label">Email:</span>
+              <span className="value">admin@hbcholdings.com</span>
             </div>
-          
+            <div className="credential-row">
+              <span className="label">Password:</span>
+              <span className="value">password123</span>
+            </div>
+          </div>
 
           <div className="login-footer">
             <Link to="/" className="back-link">
@@ -88,6 +87,6 @@ export default function Login() {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
 }

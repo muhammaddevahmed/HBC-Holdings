@@ -8,7 +8,6 @@ import {
   User,
   ArrowRight,
 } from "lucide-react";
-import Layout from "../components/Layout";
 import { featuredArticle, articles } from "./Articles";
 import "./ArticleDetail.css";
 
@@ -30,7 +29,7 @@ export default function ArticleDetail() {
 
   if (!article) {
     return (
-      <Layout activePage="/insights">
+      <>
         <div className="article-not-found">
           <h2>Article Not Found</h2>
           <p>
@@ -41,7 +40,7 @@ export default function ArticleDetail() {
             Back to Insights
           </Link>
         </div>
-      </Layout>
+      </>
     );
   }
 
@@ -55,7 +54,7 @@ export default function ArticleDetail() {
   };
 
   return (
-    <Layout activePage="/insights">
+    <>
       <article className="article-detail-page">
         {/* Hero Section */}
         <div className="article-hero">
@@ -161,6 +160,6 @@ export default function ArticleDetail() {
           </div>
         </div>
       </article>
-    </Layout>
+    </>
   );
 }
