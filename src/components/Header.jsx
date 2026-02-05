@@ -16,7 +16,6 @@ export default function Header({ activePage }) {
     { name: "Investor", href: "/investor" },
     { name: "Contact Us", href: "/contact" },
     { name: "Legal&Compliance", href: "/legal" },
-
   ];
 
   return (
@@ -26,8 +25,7 @@ export default function Header({ activePage }) {
           {/* Logo */}
           <div className="logo-container">
             <Link to="/" className="logo-link">
-              <img src="../public/logo.png" alt="HBC Holdings Logo" />
-              
+              <img src="/logo.png" alt="HBC Holdings Logo" />
             </Link>
           </div>
 
@@ -75,7 +73,6 @@ export default function Header({ activePage }) {
             <Link to="/login" className="nav-link">
               Login
             </Link>
-
           </div>
 
           {/* Mobile menu button */}
@@ -108,13 +105,11 @@ export default function Header({ activePage }) {
                         {item.name}
                         <ChevronDown
                           className={`mobile-dropdown-arrow ${
-                            (item.name === "Pages" && pagesOpen)
-                              ? "open"
-                              : ""
+                            item.name === "Pages" && pagesOpen ? "open" : ""
                           }`}
                         />
                       </button>
-                      {(item.name === "Pages" && pagesOpen) && (
+                      {item.name === "Pages" && pagesOpen && (
                         <div className="mobile-dropdown-menu">
                           {item.subItems.map((subItem) => (
                             <Link
@@ -143,7 +138,6 @@ export default function Header({ activePage }) {
               <Link to="/login" className="mobile-nav-link">
                 Login
               </Link>
-
             </div>
           </div>
         )}

@@ -24,7 +24,7 @@ export default function Login() {
           <div className="login-header">
             <div className="login-logo-container">
               <img
-                src="../public/logo.png"
+                src="/logo.png"
                 alt="HBC Holdings Logo"
                 className="logo-img"
               />

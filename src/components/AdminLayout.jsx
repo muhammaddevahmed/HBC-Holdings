@@ -88,11 +88,7 @@ export default function AdminLayout() {
         <div className="sidebar-header">
           <div className="sidebar-header-content">
             <Link to="/">
-              <img
-                src="../public/logo.png"
-                alt="HBC Logo"
-                style={{ height: "5rem" }}
-              />
+              <img src="/logo.png" alt="HBC Logo" style={{ height: "5rem" }} />
             </Link>
             <div>
               <div className="sidebar-subtitle">Admin Panel</div>
